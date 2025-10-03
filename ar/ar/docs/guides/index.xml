@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Guides on ALMACIR</title>
+    <link>https://iramat.github.io/almacir/ar/ar/docs/guides/</link>
+    <description>Recent content in Guides on ALMACIR</description>
+    <generator>Hugo</generator>
+    <language>ar</language>
+    <copyright>Copyright (c) 2020-2024 Thulite</copyright>
+    <lastBuildDate>Thu, 07 Sep 2023 16:04:48 +0200</lastBuildDate>
+    <atom:link href="https://iramat.github.io/almacir/ar/ar/docs/guides/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Database Handbook</title>
+      <link>https://iramat.github.io/almacir/ar/ar/docs/guides/example/</link>
+      <pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate>
+      <guid>https://iramat.github.io/almacir/ar/ar/docs/guides/example/</guid>
+      <description>&lt;p&gt;See the documentation hosted on the &lt;a href=&#34;https://github.com/iramat/iramat-dev/tree/main/dbs/chips&#34;&gt;iramat-dev GitHub repo&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;contribute-to-the-db&#34;&gt;Contribute to the DB&lt;/h2&gt;&#xA;&lt;p&gt;Check the contribution rules [in progress]&lt;/p&gt;&#xA;&lt;h2 id=&#34;further-reading&#34;&gt;Further reading&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Read the &lt;a href=&#34;https://zenodo.org/records/15144194&#34;&gt;CHPIS database presentation preprint&lt;/a&gt; hosted on Zenodo&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

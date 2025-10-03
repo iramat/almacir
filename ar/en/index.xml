@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Welcome to CHIPS on ALMACIR</title>
+    <link>https://iramat.github.io/almacir/ar/en/</link>
+    <description>Recent content in Welcome to CHIPS on ALMACIR</description>
+    <generator>Hugo</generator>
+    <language>ar</language>
+    <copyright>Copyright (c) 2020-2024 Thulite</copyright>
+    <lastBuildDate>Thu, 07 Sep 2023 17:19:07 +0200</lastBuildDate>
+    <atom:link href="https://iramat.github.io/almacir/ar/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Privacy Policy</title>
+      <link>https://iramat.github.io/almacir/ar/en/privacy/</link>
+      <pubDate>Thu, 07 Sep 2023 17:19:07 +0200</pubDate>
+      <guid>https://iramat.github.io/almacir/ar/en/privacy/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
