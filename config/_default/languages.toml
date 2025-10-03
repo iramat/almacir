@@ -1,0 +1,40 @@
+[en]
+languageName = "English"
+contentDir = "content/en"
+languageCode = "en"
+weight = 1
+# url = "en"
+# title = "ALMACIR"
+
+[en.params]
+languageISO = "EN"
+languageTag = "en-US"
+footer = 'Brought to you BY <a class="text-muted" href="https://thulite.io/">Thulite</a>'
+alertText = '<a class="alert-link stretched-link fw-normal" href="/blog/example-post/">Doks version 1.0 just shipped!</a>'
+
+[fr]
+languageName = "Français"
+contentDir = "content/fr"
+languageCode = "fr"
+weight = 2
+# url = "fr"
+
+[fr.params]
+languageISO = "FR"
+languageTag = "fr-FR"
+footer = 'Présenté par <a class="text-muted" href="https://thulite.io/">Thulite</a>'
+alertText = 'La nouvelle version est celle-ci ! <a class="alert-link stretched-link" href="https://getdoks.org/blog/doks-v0.5/">Doks v0.5</a>'
+
+[ar]
+languageName = "Arabe"
+contentDir = "content/ar"
+languageCode = "ar"
+weight = 3
+# url = "ar"
+# title = "تشيبس"
+
+[ar.params]
+languageISO = "AR"
+languageTag = "ar"
+footer = 'تم إنشاؤه بواسطة <a class="text-muted" href="https://thulite.io/">Thulite</a>'
+alertText = '<a class="alert-link stretched-link fw-normal" href="/blog/example-post/">تم إصدار نسخة دوكس 1.0 للتو!</a>'

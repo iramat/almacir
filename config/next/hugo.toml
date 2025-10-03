@@ -1,0 +1,3 @@
+# Overrides for next environment
+# baseurl = "/"
+baseurl = "https://iramat.github.io/chips/"
