@@ -22,8 +22,14 @@
     <div class="container">
   {{ end -}}
 
-    <!-- Site title -->
-    <a class="navbar-brand me-auto me-lg-3" href="{{ relLangURL }}">{{ .Site.Title }}</a>
+    <!-- Site title and ALMACIR logo -->
+  <a class="navbar-brand me-auto me-lg-3" href="{{ "" | relLangURL }}">
+      {{ with .Site.Params.logo }}
+        <img src="{{ . | relURL }}" alt="Logo" class="site-logo me-2">
+      {{ end }}
+    {{ .Site.Title }}
+  </a>
+
 
     <!-- FlexSearch mobile -->
     {{ partial "main/showFlexSearch" . }}
@@ -113,9 +119,9 @@
           {{- $current := . -}}
           {{- $section := $current.Section -}}
           {{ range .Site.Menus.main -}}
-            <p style="color: red;">
+            {{/*  <p style="color: red;">
               DEBUG : {{ .Name }} —  URL: {{ .URL }} — relLangURL: {{ .URL | relLangURL }}
-            </p>
+            </p>  */}}
             {{- $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) -}}
             {{- $active = or $active (eq .Name $current.Title) -}}
             {{- $active = or $active (eq .Name ($section | humanize)) -}}

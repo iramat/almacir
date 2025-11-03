@@ -11,16 +11,22 @@
   url = "/tutorial/lorem/"
 
 [[main]]
+name = "Présentation"
+pageRef = "presentation"
+url = "fr/presentation"
+weight = 10
+
+[[main]]
+name = "Projet scientifique"
+pageRef = "projet"
+url = "fr/projet"
+weight = 20
+
+[[main]]
 name = "Documentation BDD"
 pageRef = "docs"
 url = "fr/docs" # TODO: less 'hardcoded'
-weight = 10
-
-# [[main]]
-# name = "Blog"
-# pageRef = "blog/"
-# url = "blog/"
-# weight = 30
+weight = 30
 
 [[social]]
   name = "GitHub"
