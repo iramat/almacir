@@ -3,7 +3,7 @@ title: "Presentation"
 type: docs
 layout: docs
 weight: 1
-lang: en
+# lang: en
 url: "/en/presentation/"
 ---
 

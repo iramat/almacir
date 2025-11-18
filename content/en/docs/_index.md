@@ -1,7 +1,7 @@
 ---
 title: "DB Documentation"
 type: docs
-lang: en
+# lang: en
 layout: docs
 weight: 1
 url: "/en/docs/"
@@ -10,7 +10,7 @@ url: "/en/docs/"
 🚧 Work in progress 🚧
 
 <p align="center">
-    {{< img src="images/spat_general.png" alt="ateliers" width="700" >}}<br>
+    {{< img src="spat_general.png" alt="ateliers" width="700" >}}<br>
   Mints represented in the projected corpus
 </p>
 

@@ -2,7 +2,7 @@
 title: "Project"
 type: docs
 layout: docs
-lang: en
+# lang: en
 weight: 1
 url: "/en/project/"
 ---
