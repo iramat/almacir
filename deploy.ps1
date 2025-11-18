@@ -4,9 +4,6 @@ $ErrorActionPreference = "Stop"
 Write-Host "▶ Generating site with Hugo..."
 hugo --minify
 
-Write-Host "▶ Removing remote gh-pages branch (if it exists)..."
-git push origin --delete gh-pages 2>$null
-
 Write-Host "▶ Entering public/ folder..."
 Set-Location public
 
