@@ -7,7 +7,8 @@ from branca.element import MacroElement, Template
 
 # --- 1. Load data ---------------------------------------------------------
 
-URL = "https://raw.githubusercontent.com/iramat/almacir/refs/heads/hugo-files/data/sites.tsv"
+URL = "https://raw.githubusercontent.com/iramat/almacir/refs/heads/hugo-files/static/sites.tsv"
+# URL = "./static/sites.tsv"
 
 # If you download it locally, replace URL by "data/sites.tsv"
 df = pd.read_csv(URL, sep=r"\s+", engine="python")
@@ -147,7 +148,7 @@ legend._template = Template(legend_html)
 legend._template.module.legend_items = legend_items
 
 m.get_root().add_child(legend)
-out_map = f"{os.getcwd()}\\data\\map.html"
+out_map = f"{os.getcwd()}\\static\\map.html"
 
 m
 
