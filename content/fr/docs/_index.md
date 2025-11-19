@@ -9,14 +9,15 @@ url: "/fr/docs/"
 🚧 En construction 🚧
 
 <p align="center">
-    {{< img src="images/spat_general.png" alt="ateliers" width="700" >}}<br>
-  Ateliers monétaires prévus d'être étudiés
-</p>
-
-<iframe
-  src="/almacir/data/static/map.html"
-  width="100%"
-  height="600"
+  <iframe
+  src="/almacir/map.html"
+  width="900"
+  height="450"
   loading="lazy"
   style="border:0;">
 </iframe>
+<br>
+  Ateliers monétaires prévus d'être étudiés
+</p>
+
+
