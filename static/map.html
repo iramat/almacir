@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_8568f6eee1fb2e2a666cc01c9cea335b {
+                #map_a88d6ccb56393ded902faad95814de0c {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -54,7 +54,7 @@
 <body>
     
     
-            <div class="folium-map" id="map_8568f6eee1fb2e2a666cc01c9cea335b" ></div>
+            <div class="folium-map" id="map_a88d6ccb56393ded902faad95814de0c" ></div>
         
     
 <div id="map-legend" style="
@@ -75,8 +75,8 @@
 <script>
     
     
-            var map_8568f6eee1fb2e2a666cc01c9cea335b = L.map(
-                "map_8568f6eee1fb2e2a666cc01c9cea335b",
+            var map_a88d6ccb56393ded902faad95814de0c = L.map(
+                "map_a88d6ccb56393ded902faad95814de0c",
                 {
                     center: [39.0, 12.0],
                     crs: L.CRS.EPSG3857,
@@ -96,8 +96,9 @@
   "preferCanvas": false,
   "dragging": false,
   "scrollWheelZoom": false,
-  "touchZoom": false,
   "doubleClickZoom": false,
+  "touchZoom": false,
+  "bounceAtZoomLimits": false,
 }
 
                 }
@@ -107,14 +108,14 @@
 
         
     
-            var tile_layer_dce2990874f59a6f3e0f3ed1174fcbb8 = L.tileLayer(
+            var tile_layer_3729ffb4691644a5eb756c77b0f808ce = L.tileLayer(
                 "https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}",
                 {
-  "minZoom": 6,
-  "maxZoom": 6,
-  "maxNativeZoom": 6,
+  "minZoom": 5,
+  "maxZoom": 5,
+  "maxNativeZoom": 5,
   "noWrap": false,
-  "attribution": "basemap: ESRI World_Physical_Map",
+  "attribution": "Tiles \u0026copy; Esri \u0026mdash; Source: US National Park Service",
   "subdomains": "abc",
   "detectRetina": false,
   "tms": false,
@@ -124,7 +125,7 @@
             );
         
     
-            tile_layer_dce2990874f59a6f3e0f3ed1174fcbb8.addTo(map_8568f6eee1fb2e2a666cc01c9cea335b);
+            tile_layer_3729ffb4691644a5eb756c77b0f808ce.addTo(map_a88d6ccb56393ded902faad95814de0c);
         
 </script>
 </html>

@@ -96,43 +96,85 @@ types_in_data = sorted(df["type"].dropna().unique().tolist())
 
 # --- 3. Center and Bounds -------------------------------------------------
 
+# # Vos limites définies : y (lat), x (lon)
+# min_lat, max_lat = -3, 44
+# min_lon, max_lon = -11, 24
+
+# # Calcul du centre exact de cette étendue
+# center_lat = (min_lat + max_lat) / 2
+# center_lon = (min_lon + max_lon) / 2
+# # center_lat = 39
+# # center_lon = 12
+
+# # --- 4. Create the map ----------------------------------------------------
+
+# tiles_url = tiles_url = "https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}"
+# attribution = 'basemap: ESRI World_Physical_Map'
+
+# m = folium.Map(
+#     location=[center_lat, center_lon],
+#     tiles=tiles_url,
+#     attr=attribution,
+#     # On applique les limites maximales pour empêcher de sortir de la zone
+#     max_bounds=True,
+#     min_lat=min_lat,
+#     max_lat=max_lat,
+#     min_lon=min_lon,
+#     max_lon=max_lon,
+#     # Paramètres de verrouillage demandés précédemment
+#     dragging=False,
+#     zoom_control=False,
+#     scrollWheelZoom=False,
+#     touchZoom=False,
+#     doubleClickZoom=False,
+#     min_zoom=4,                 # Lock min zoom to the start level
+#     max_zoom=4,                  # Lock max zoom to the start level
+#     bounceAtZoomLimits=False
+# )
+
+# Forcer la carte à s'ajuster exactement à ces limites
+# m.fit_bounds([[min_lat, min_lon], [max_lat, max_lon]])
+
+# --- 3. Center and Bounds -------------------------------------------------
 # Vos limites définies : y (lat), x (lon)
 min_lat, max_lat = -3, 44
 min_lon, max_lon = -11, 24
 
-# Calcul du centre exact de cette étendue
-# center_lat = (min_lat + max_lat) / 2
-# center_lon = (min_lon + max_lon) / 2
+# Calcul du centre exact pour un rendu équilibré dans l'iframe
+# center_lat = (min_lat + max_lat) / 2 # 20.5
+# center_lon = (min_lon + max_lon) / 2 # 6.5
 center_lat = 39
 center_lon = 12
 
 # --- 4. Create the map ----------------------------------------------------
 
-tiles_url = tiles_url = "https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}"
-attribution = 'basemap: ESRI World_Physical_Map'
+# URL stable pour Esri World Physical Map
+tiles_url = "https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}"
+attribution = 'Tiles &copy; Esri &mdash; Source: US National Park Service'
 
 m = folium.Map(
     location=[center_lat, center_lon],
+    # zoom_start=3,              # Zoom réduit pour éviter l'erreur "Data not available" [cite: 7]
     tiles=tiles_url,
     attr=attribution,
-    # On applique les limites maximales pour empêcher de sortir de la zone
-    max_bounds=True,
+    max_bounds=True,           # Active les limites de la carte
     min_lat=min_lat,
     max_lat=max_lat,
     min_lon=min_lon,
     max_lon=max_lon,
-    # Paramètres de verrouillage demandés précédemment
-    dragging=False,
-    zoom_control=False,
-    scrollWheelZoom=False,
-    touchZoom=False,
+    # --- Interactivity Locks (Verrouillage pour Hugo) ---
+    dragging=False,            # Bloque le déplacement [cite: 6]
+    zoom_control=False,        # Supprime les boutons +/-
+    scrollWheelZoom=False,     # Désactive le zoom à la molette
     doubleClickZoom=False,
-    min_zoom=6,                 # Lock min zoom to the start level
-    max_zoom=6                  # Lock max zoom to the start level
+    touchZoom=False,
+    min_zoom=5,                # Verrouille le zoom au niveau choisi [cite: 9]
+    max_zoom=5,
+    bounceAtZoomLimits=False
 )
 
-# Forcer la carte à s'ajuster exactement à ces limites
-# m.fit_bounds([[min_lat, min_lon], [max_lat, max_lon]])
+# Note : On ne met pas fit_bounds() car cela forcerait un zoom dynamique
+# qui briserait l'affichage dans votre iframe de 900x450.
 
 # --- 5. Add markers -------------------------------------------------------
 if(sites):
