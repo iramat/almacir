@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_624d41cceed82e33dd65db94aa183634 {
+                #map_8568f6eee1fb2e2a666cc01c9cea335b {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -54,7 +54,7 @@
 <body>
     
     
-            <div class="folium-map" id="map_624d41cceed82e33dd65db94aa183634" ></div>
+            <div class="folium-map" id="map_8568f6eee1fb2e2a666cc01c9cea335b" ></div>
         
     
 <div id="map-legend" style="
@@ -75,19 +75,29 @@
 <script>
     
     
-            var map_624d41cceed82e33dd65db94aa183634 = L.map(
-                "map_624d41cceed82e33dd65db94aa183634",
+            var map_8568f6eee1fb2e2a666cc01c9cea335b = L.map(
+                "map_8568f6eee1fb2e2a666cc01c9cea335b",
                 {
-                    center: [31.274719994271592, -4.28733503389202],
+                    center: [39.0, 12.0],
                     crs: L.CRS.EPSG3857,
                     ...{
-  "zoom": 6,
+  "maxBounds": [
+[
+-3,
+-11,
+],
+[
+44,
+24,
+],
+],
+  "zoom": 10,
   "zoomControl": false,
   "preferCanvas": false,
   "dragging": false,
   "scrollWheelZoom": false,
-  "doubleClickZoom": false,
   "touchZoom": false,
+  "doubleClickZoom": false,
 }
 
                 }
@@ -97,14 +107,14 @@
 
         
     
-            var tile_layer_e331f0c9a00dc1641875f68226411b0d = L.tileLayer(
+            var tile_layer_dce2990874f59a6f3e0f3ed1174fcbb8 = L.tileLayer(
                 "https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}",
                 {
   "minZoom": 6,
   "maxZoom": 6,
   "maxNativeZoom": 6,
   "noWrap": false,
-  "attribution": "attribution",
+  "attribution": "basemap: ESRI World_Physical_Map",
   "subdomains": "abc",
   "detectRetina": false,
   "tms": false,
@@ -114,55 +124,7 @@
             );
         
     
-            tile_layer_e331f0c9a00dc1641875f68226411b0d.addTo(map_624d41cceed82e33dd65db94aa183634);
+            tile_layer_dce2990874f59a6f3e0f3ed1174fcbb8.addTo(map_8568f6eee1fb2e2a666cc01c9cea335b);
         
-    
-            var marker_5cd7ad7c9d24edc7386585380248babe = L.marker(
-                [31.274719994271592, -4.28733503389202],
-                {
-}
-            ).addTo(map_624d41cceed82e33dd65db94aa183634);
-        
-    
-            var icon_708257bd82d69c01de0fc5cfd7954968 = L.AwesomeMarkers.icon(
-                {
-  "markerColor": "red",
-  "iconColor": "white",
-  "icon": "wrench",
-  "prefix": "glyphicon",
-  "extraClasses": "fa-rotate-0",
-}
-            );
-        
-    
-        var popup_5d65945ce64a2d6aed7c9ae54f7c0135 = L.popup({
-  "maxWidth": 300,
-});
-
-        
-            
-                var html_2eb8f5f902717e9cbb3b5951b1c48848 = $(`<div id="html_2eb8f5f902717e9cbb3b5951b1c48848" style="width: 100.0%; height: 100.0%;">     <strong>Sijilmassa</strong><br>     <b>Type:</b> A<br>     <b>Description (FR):</b> atelier<br>     <b>Description (EN):</b> workshop     </div>`)[0];
-                popup_5d65945ce64a2d6aed7c9ae54f7c0135.setContent(html_2eb8f5f902717e9cbb3b5951b1c48848);
-            
-        
-
-        marker_5cd7ad7c9d24edc7386585380248babe.bindPopup(popup_5d65945ce64a2d6aed7c9ae54f7c0135)
-        ;
-
-        
-    
-    
-            marker_5cd7ad7c9d24edc7386585380248babe.bindTooltip(
-                `<div>
-                     Sijilmassa
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-                marker_5cd7ad7c9d24edc7386585380248babe.setIcon(icon_708257bd82d69c01de0fc5cfd7954968);
-            
 </script>
 </html>

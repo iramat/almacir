@@ -5,6 +5,10 @@ import pandas as pd
 import folium
 from branca.element import MacroElement, Template
 
+# --- 0. Global param ----------------------------------------------------
+
+sites = False # display or not the sites (cf. URL below)
+
 # --- 1. Load data ---------------------------------------------------------
 
 URL = "https://raw.githubusercontent.com/iramat/almacir/refs/heads/hugo-files/static/sites.tsv"
@@ -53,73 +57,113 @@ DEFAULT_STYLE = {
 # Collect all types present (for the legend)
 types_in_data = sorted(df["type"].dropna().unique().tolist())
 
-# --- 3. Center of the map -------------------------------------------------
+# # --- 3. Center of the map -------------------------------------------------
 
-if not df.empty:
-    center_lat = df["lat"].astype(float).mean()
-    center_lon = df["lon"].astype(float).mean()
-else:
-    # fallback somewhere reasonable if df is empty
-    center_lat, center_lon = 40, 5
+# if not df.empty:
+#     center_lat = df["lat"].astype(float).mean()
+#     center_lon = df["lon"].astype(float).mean()
+# else:
+#     # fallback somewhere reasonable if df is empty
+#     center_lat, center_lon = 40, 5
 
-# --- 4. Create the map ----------------------------------------------------
+# # --- 4. Create the map ----------------------------------------------------
+
+# # m = folium.Map(
+# #     location=[center_lat, center_lon],
+# #     zoom_start=6,
+# #     tiles="OpenStreetMap",
+# # )
+# # --- 4. Create the map ----------------------------------------------------
+
+# # Define the custom Stadia/Stamen tile layer details
+# tiles_url = "https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}"
+# attribution = 'attribution'
 
 # m = folium.Map(
-#     location=[center_lat, center_lon],
+#     location=[center_lat, center_lon], # [cite: 4]
 #     zoom_start=6,
-#     tiles="OpenStreetMap",
+#     tiles=tiles_url,
+#     attr=attribution,
+#     # --- Interactivity Locks ---
+#     dragging=False,            # Blocks the 'span' (panning)
+#     zoom_control=False,         # Removes +/- zoom buttons
+#     scrollWheelZoom=False,      # Prevents zooming with mouse wheel
+#     doubleClickZoom=False,      # Prevents zooming via double-click
+#     touchZoom=False,            # Prevents zooming on touch devices
+#     min_zoom=6,                 # Lock min zoom to the start level
+#     max_zoom=6                  # Lock max zoom to the start level
 # )
+
+# --- 3. Center and Bounds -------------------------------------------------
+
+# Vos limites définies : y (lat), x (lon)
+min_lat, max_lat = -3, 44
+min_lon, max_lon = -11, 24
+
+# Calcul du centre exact de cette étendue
+# center_lat = (min_lat + max_lat) / 2
+# center_lon = (min_lon + max_lon) / 2
+center_lat = 39
+center_lon = 12
+
 # --- 4. Create the map ----------------------------------------------------
 
-# Define the custom Stadia/Stamen tile layer details
-tiles_url = "https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}"
-attribution = 'attribution'
+tiles_url = tiles_url = "https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}"
+attribution = 'basemap: ESRI World_Physical_Map'
 
 m = folium.Map(
-    location=[center_lat, center_lon], # [cite: 4]
-    zoom_start=6,
+    location=[center_lat, center_lon],
     tiles=tiles_url,
     attr=attribution,
-    # --- Interactivity Locks ---
-    dragging=False,            # Blocks the 'span' (panning)
-    zoom_control=False,         # Removes +/- zoom buttons
-    scrollWheelZoom=False,      # Prevents zooming with mouse wheel
-    doubleClickZoom=False,      # Prevents zooming via double-click
-    touchZoom=False,            # Prevents zooming on touch devices
+    # On applique les limites maximales pour empêcher de sortir de la zone
+    max_bounds=True,
+    min_lat=min_lat,
+    max_lat=max_lat,
+    min_lon=min_lon,
+    max_lon=max_lon,
+    # Paramètres de verrouillage demandés précédemment
+    dragging=False,
+    zoom_control=False,
+    scrollWheelZoom=False,
+    touchZoom=False,
+    doubleClickZoom=False,
     min_zoom=6,                 # Lock min zoom to the start level
     max_zoom=6                  # Lock max zoom to the start level
 )
 
+# Forcer la carte à s'ajuster exactement à ces limites
+# m.fit_bounds([[min_lat, min_lon], [max_lat, max_lon]])
+
 # --- 5. Add markers -------------------------------------------------------
+if(sites):
+    for _, row in df.iterrows():
+        lat = float(row["lat"])
+        lon = float(row["lon"])
 
-for _, row in df.iterrows():
-    lat = float(row["lat"])
-    lon = float(row["lon"])
+        site_type = str(row["type"])
+        style = TYPE_STYLES.get(site_type, DEFAULT_STYLE)
 
-    site_type = str(row["type"])
-    style = TYPE_STYLES.get(site_type, DEFAULT_STYLE)
+        name = row.get("name_fr") or row.get("name_en") or "Unnamed site"
+        desc_fr = row.get("description_fr", "")
+        desc_en = row.get("description_en", "")
 
-    name = row.get("name_fr") or row.get("name_en") or "Unnamed site"
-    desc_fr = row.get("description_fr", "")
-    desc_en = row.get("description_en", "")
+        popup_html = f"""
+        <strong>{name}</strong><br>
+        <b>Type:</b> {site_type}<br>
+        <b>Description (FR):</b> {desc_fr}<br>
+        <b>Description (EN):</b> {desc_en}
+        """
 
-    popup_html = f"""
-    <strong>{name}</strong><br>
-    <b>Type:</b> {site_type}<br>
-    <b>Description (FR):</b> {desc_fr}<br>
-    <b>Description (EN):</b> {desc_en}
-    """
-
-    folium.Marker(
-        location=[lat, lon],
-        popup=folium.Popup(popup_html, max_width=300),
-        tooltip=name,
-        icon=folium.Icon(
-            color=style["color"],
-            icon=style["icon"].split("-")[-1],  # e.g. "wrench" from "glyphicon-wrench"
-            prefix="glyphicon",
-        ),
-    ).add_to(m)
+        folium.Marker(
+            location=[lat, lon],
+            popup=folium.Popup(popup_html, max_width=300),
+            tooltip=name,
+            icon=folium.Icon(
+                color=style["color"],
+                icon=style["icon"].split("-")[-1],  # e.g. "wrench" from "glyphicon-wrench"
+                prefix="glyphicon",
+            ),
+        ).add_to(m)
 
 # --- 6. Add legend --------------------------------------------------------
 
@@ -168,11 +212,12 @@ legend._template = Template(legend_html)
 legend._template.module.legend_items = legend_items
 
 m.get_root().add_child(legend)
-out_map = f"{os.getcwd()}\\static\\map_temp.html"
+out_name = "map.html"
+out_map = f"{os.getcwd()}\\static\\{out_name}"
 
 m
 
 # --- 7. Save --------------------------------------------------------------
 
 m.save(out_map)
-print("Map saved to map.html")
+print(f"Map saved to '{out_map}'")
