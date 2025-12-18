@@ -16,3 +16,4 @@
 | **Gratification mensuelle**            | Réglementation en vigueur                                                                                  |
 | **Candidatures**                       | Les candidatures devront comprendre un CV et une lettre de motivation et devront être envoyées par courrier électronique aux deux adresses suivantes :  sebastien.gasc@cnrs-orleans.fr et thomas.huet@cnrs.fr |
 
+voir: documentation [Numishare/ALMACIR](https://github.com/iramat/iramat-dev/tree/main/dbs/almacir)
