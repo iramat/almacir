@@ -17,7 +17,7 @@ url: "/fr/docs/"
   style="border:0;">
 </iframe>
 <br>
-  Ateliers monétaires prévus d'être étudiés
+  Ateliers monétaires des monnaies analysées
 </p>
 
 

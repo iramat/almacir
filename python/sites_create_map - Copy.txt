@@ -64,30 +64,10 @@ else:
 
 # --- 4. Create the map ----------------------------------------------------
 
-# m = folium.Map(
-#     location=[center_lat, center_lon],
-#     zoom_start=6,
-#     tiles="OpenStreetMap",
-# )
-# --- 4. Create the map ----------------------------------------------------
-
-# Define the custom Stadia/Stamen tile layer details
-tiles_url = "https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}"
-attribution = 'attribution'
-
 m = folium.Map(
-    location=[center_lat, center_lon], # [cite: 4]
+    location=[center_lat, center_lon],
     zoom_start=6,
-    tiles=tiles_url,
-    attr=attribution,
-    # --- Interactivity Locks ---
-    dragging=False,            # Blocks the 'span' (panning)
-    zoom_control=False,         # Removes +/- zoom buttons
-    scrollWheelZoom=False,      # Prevents zooming with mouse wheel
-    doubleClickZoom=False,      # Prevents zooming via double-click
-    touchZoom=False,            # Prevents zooming on touch devices
-    min_zoom=6,                 # Lock min zoom to the start level
-    max_zoom=6                  # Lock max zoom to the start level
+    tiles="OpenStreetMap",
 )
 
 # --- 5. Add markers -------------------------------------------------------
@@ -168,11 +148,11 @@ legend._template = Template(legend_html)
 legend._template.module.legend_items = legend_items
 
 m.get_root().add_child(legend)
-out_map = f"{os.getcwd()}\\static\\map_temp.html"
+out_map = f"{os.getcwd()}\\static\\map.html"
 
 m
 
 # --- 7. Save --------------------------------------------------------------
 
-m.save(out_map)
+# m.save(out_map)
 print("Map saved to map.html")
