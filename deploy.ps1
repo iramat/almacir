@@ -1,26 +1,21 @@
-# Stop on error
-$ErrorActionPreference = "Stop"
+# Script de déploiement Hugo pour almacir
 
-Write-Host "▶ Generating site with Hugo..."
+Write-Host "--- 1. Nettoyage et Préparation ---" -ForegroundColor Cyan
+# Supprime le contenu actuel de public pour éviter les fichiers fantômes
+if (Test-Path public) { Remove-Item -Recurse -Force public\* }
+
+Write-Host "--- 2. Génération du site avec Hugo ---" -ForegroundColor Cyan
 hugo --minify
 
-Write-Host "▶ Entering public/ folder..."
-Set-Location public
+Write-Host "--- 3. Déploiement vers la branche gh-pages ---" -ForegroundColor Cyan
+cd public
 
-Write-Host "▶ Initializing temporary Git repo..."
-git init
+# On force l'ajout car le .gitignore parent ignore souvent le dossier 'public'
 git add -A
-git commit -m "Deploy Hugo site"
+$commitMessage = "Site mis à jour le $(Get-Date -Format 'yyyy-MM-dd HH:mm')"
+git commit -m $commitMessage
+git push origin gh-pages
 
-Write-Host "▶ Connecting to remote..."
-git branch -M gh-pages
-git remote add origin https://github.com/iramat/almacir.git
+cd ..
 
-Write-Host "▶ Pushing to gh-pages..."
-git push -u origin gh-pages --force
-
-Write-Host "▶ Cleaning up..."
-Set-Location ..
-Remove-Item -Recurse -Force public\.git
-
-Write-Host "✅ Deployment complete!"
+Write-Host "--- Terminé ! Le site est en ligne. ---" -ForegroundColor Green
