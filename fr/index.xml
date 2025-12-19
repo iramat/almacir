@@ -1,12 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>ALMACIR</title>
-    <link>https://iramat.github.io/almacir/fr/</link>
-    <description>Recent content on ALMACIR</description>
-    <generator>Hugo</generator>
-    <language>fr</language>
-    <copyright>Copyright (c) 2020-2024 Thulite</copyright>
-    <atom:link href="https://iramat.github.io/almacir/fr/index.xml" rel="self" type="application/rss+xml" />
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Welcome to ALMACIR on ALMACIR</title><link>https://iramat.github.io/almacir/fr/</link><description>Recent content in Welcome to ALMACIR on ALMACIR</description><generator>Hugo</generator><language>fr</language><copyright>Copyright (c) 2020-2024 Thulite</copyright><lastBuildDate>Thu, 07 Sep 2023 16:27:22 +0200</lastBuildDate><atom:link href="https://iramat.github.io/almacir/fr/index.xml" rel="self" type="application/rss+xml"/><item><title>Example Post</title><link>https://iramat.github.io/almacir/fr/ar/blog/example/</link><pubDate>Thu, 07 Sep 2023 16:27:22 +0200</pubDate><guid>https://iramat.github.io/almacir/fr/ar/blog/example/</guid><description>You can use blog posts for announcing product updates and features.</description></item><item><title>Example Post</title><link>https://iramat.github.io/almacir/fr/en/blog/example/</link><pubDate>Thu, 07 Sep 2023 16:27:22 +0200</pubDate><guid>https://iramat.github.io/almacir/fr/en/blog/example/</guid><description>You can use blog posts for announcing product updates and features.</description></item><item><title>Example Post</title><link>https://iramat.github.io/almacir/fr/en/project/example/</link><pubDate>Thu, 07 Sep 2023 16:27:22 +0200</pubDate><guid>https://iramat.github.io/almacir/fr/en/project/example/</guid><description>You can use blog posts for announcing product updates and features.</description></item><item><title>Example Post</title><link>https://iramat.github.io/almacir/fr/fr/blog/example/</link><pubDate>Thu, 07 Sep 2023 16:27:22 +0200</pubDate><guid>https://iramat.github.io/almacir/fr/fr/blog/example/</guid><description>You can use blog posts for announcing product updates and features.</description></item><item><title>Example Post</title><link>https://iramat.github.io/almacir/fr/fr/presentation/example/</link><pubDate>Thu, 07 Sep 2023 16:27:22 +0200</pubDate><guid>https://iramat.github.io/almacir/fr/fr/presentation/example/</guid><description>You can use blog posts for announcing product updates and features.</description></item><item><title>Example Post</title><link>https://iramat.github.io/almacir/fr/fr/projet/example/</link><pubDate>Thu, 07 Sep 2023 16:27:22 +0200</pubDate><guid>https://iramat.github.io/almacir/fr/fr/projet/example/</guid><description>You can use blog posts for announcing product updates and features.</description></item><item><title>Database Handbook</title><link>https://iramat.github.io/almacir/fr/ar/docs/guides/example/</link><pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate><guid>https://iramat.github.io/almacir/fr/ar/docs/guides/example/</guid><description>&lt;p>See the documentation hosted on the &lt;a href="https://github.com/iramat/iramat-dev/tree/main/dbs/chips">iramat-dev GitHub repo&lt;/a>&lt;/p>
+&lt;h2 id="contribute-to-the-db">Contribute to the DB&lt;/h2>
+&lt;p>Check the contribution rules [in progress]&lt;/p>
+&lt;h2 id="further-reading">Further reading&lt;/h2>
+&lt;ul>
+&lt;li>Read the &lt;a href="https://zenodo.org/records/15144194">CHPIS database presentation preprint&lt;/a> hosted on Zenodo&lt;/li>
+&lt;/ul></description></item><item><title>Database Handbook</title><link>https://iramat.github.io/almacir/fr/en/docs/guides/example/</link><pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate><guid>https://iramat.github.io/almacir/fr/en/docs/guides/example/</guid><description>&lt;p>See the documentation hosted on the &lt;a href="https://github.com/iramat/iramat-dev/tree/main/dbs/chips">iramat-dev GitHub repo&lt;/a>&lt;/p>
+&lt;h2 id="contribute-to-the-db">Contribute to the DB&lt;/h2>
+&lt;p>Check the contribution rules [in progress]&lt;/p>
+&lt;h2 id="further-reading">Further reading&lt;/h2>
+&lt;ul>
+&lt;li>Read the &lt;a href="https://zenodo.org/records/15144194">CHPIS database presentation preprint&lt;/a> hosted on Zenodo&lt;/li>
+&lt;/ul></description></item><item><title>Database Handbook</title><link>https://iramat.github.io/almacir/fr/fr/docs/guides/example/</link><pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate><guid>https://iramat.github.io/almacir/fr/fr/docs/guides/example/</guid><description>&lt;p>See the documentation hosted on the &lt;a href="https://github.com/iramat/iramat-dev/tree/main/dbs/chips">iramat-dev GitHub repo&lt;/a>&lt;/p>
+&lt;h2 id="contribute-to-the-db">Contribute to the DB&lt;/h2>
+&lt;p>Check the contribution rules [in progress]&lt;/p>
+&lt;h2 id="further-reading">Further reading&lt;/h2>
+&lt;ul>
+&lt;li>Read the &lt;a href="https://zenodo.org/records/15144194">CHPIS database presentation preprint&lt;/a> hosted on Zenodo&lt;/li>
+&lt;/ul></description></item><item><title>Example Reference</title><link>https://iramat.github.io/almacir/fr/ar/docs/reference/example/</link><pubDate>Thu, 07 Sep 2023 16:13:18 +0200</pubDate><guid>https://iramat.github.io/almacir/fr/ar/docs/reference/example/</guid><description>&lt;p>Reference pages are ideal for outlining how things work in terse and clear terms. Less concerned with telling a story or addressing a specific use case, they should give a comprehensive outline of what your documenting.&lt;/p></description></item></channel></rss>
