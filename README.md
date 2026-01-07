@@ -1,4 +1,4 @@
 # ALMACIR
 > ANR ALMACIR
 
-* [website](https://iramat.github.io/almacir/en/)
+* [website](https://iramat.github.io/almacir)
