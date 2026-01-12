@@ -1,79 +1,114 @@
 [
   {
-    "objectID": "index.html#la-série-wiai",
-    "href": "index.html#la-série-wiai",
+    "objectID": "index.html#numishare",
+    "href": "index.html#numishare",
     "title": "ALMACIR",
-    "section": "La série WIAI",
-    "text": "La série WIAI\n\n\nWebinaires dédiés aux technologies de l’information pour l’archéométrie:  GitHub , Python , R , API , IIIF , etc. \n\n\n\n\n\n\nNote\n\n\n📅 Bimestriel. Le 2e Mardi matin, sur ZOOM entre 10h00 et 10h50 (50 minutes), lien sur le GitHub et le calendrier de l’IRAMAT\n\n\n\n\n\n\n\n“SQL won. Get over it.” – Michael Stonebraker, crédit: David Monniaux \n\n\n\n\nDécouvrir – ou approfondir – une solution logicielle open-source en revenant sur l’histoire de ce logiciel, sa logique interne, … Avec des citations rigolotes"
+    "section": "Numishare",
+    "text": "Numishare\n\nPrésentationHistoriqueMCD\n\n\n\n\nSuite d’applications open source pour la gestion des collections numismatiques. Normes et pratiques communes des bibliothèques/archives/musées pour la durabilité et l’interopérabilité des données.\n\n\n\n\n\nCollection numismatique du Musée d’art de l’Université de Virginie hébergé par le Scholars’ Lab. Le projet a débuté à l’automne 2007 et le code a été rendu open source à l’été 2009. Développé et maintenu par l’ ANS1 et utilisé pour sa collection en ligne\n\n\n\n\n\n\n\nflowchart TB\n    Browser[\"🌐 Web Browser&lt;br/&gt;(User / Admin / API)\"]\n    subgraph Numishare stack\n        Tomcat[\"🧱 Apache Tomcat 9&lt;br/&gt;Port 8080\"]\n        Orbeon[\"📄 Orbeon Forms CE&lt;br/&gt;Context: /orbeon\"]\n        Numishare[\"🪙 Numishare App&lt;br/&gt;/orbeon/numishare\"]\n        Exist[\"🗄️ eXist-db&lt;br/&gt;Port 8888&lt;br/&gt;NUDS / RDF / Config\"]\n        Solr[\"🔍 Apache Solr&lt;br/&gt;Port 8983&lt;br/&gt;Core: numishare\"]\n        Cantaloupe[\"🖼️ Cantaloupe IIIF&lt;br/&gt;Base: /iiif/2/\"]\n        Images[\"💾 Image Storage&lt;br/&gt;/home/ubuntu/data/numishare/images\"]\n    end\n\n    Browser --&gt;|HTTP/S| Tomcat\n    Tomcat --&gt; Orbeon\n    Orbeon --&gt; Numishare\n    Numishare --&gt; Exist\n    Numishare --&gt; Solr\n    Numishare --&gt; Cantaloupe\n    Cantaloupe --&gt; Images"
   },
   {
-    "objectID": "index.html#plan-de-la-présentation",
-    "href": "index.html#plan-de-la-présentation",
+    "objectID": "index.html#almacir-sur-numishare",
+    "href": "index.html#almacir-sur-numishare",
     "title": "ALMACIR",
-    "section": "Plan de la présentation",
-    "text": "Plan de la présentation\n\nLa BDD CHIPS \nIntéropérabilité et Réusabilité\nPerspectives\nDiscussion"
+    "section": "ALMACIR sur Numishare",
+    "text": "ALMACIR sur Numishare\n\nNumishare est déployé et opérationnel en mode admin.\n\n\n\n\nApplications\nURLs\n\n\n\n\nTomcat\nhttp://157.136.252.188:8080\n\n\nOrbeon\nhttp://157.136.252.188:8080/orbeon/\n\n\nNumishare\nhttp://157.136.252.188:8080/orbeon/numishare/"
   },
   {
-    "objectID": "index.html#motivations",
-    "href": "index.html#motivations",
+    "objectID": "index.html#todo",
+    "href": "index.html#todo",
     "title": "ALMACIR",
-    "section": "Motivations",
-    "text": "Motivations\nMalgré l’importance des données de l’archéométallurgie du fer pour reconstruire les techniques anciennes, comprendre les contextes et modéliser les réseaux d’échanges, ➡️ l’absence d’un référentiel chimique partagé a conduit à la l’hétérogénéité des résultats des analyses.\n\nCHIPS vise à (i) centraliser, normaliser, rendre interopérables des données, et (ii) identifier, développer et documenter les référentiels, afin de faciliter l’exploitation collective des données de l’archéométallurgie du fer."
+    "section": "⏳ TODO",
+    "text": "⏳ TODO\n\nAlimenter les données, activer Solr, et finaliser l’exposition publique (production)\nhttp://157.136.252.188 (HTTP) -&gt; https://iramat-apps.cnrs.fr/ (HTTPS)"
   },
   {
-    "objectID": "index.html#présentation",
-    "href": "index.html#présentation",
+    "objectID": "index.html#package-iramat",
+    "href": "index.html#package-iramat",
     "title": "ALMACIR",
-    "section": "Présentation",
-    "text": "Présentation\n\n\nBase de données  destinée aux archéométallurgistes du fer, offrant des milliers d’analyses chimiques révisées et normalisées (6650 échantillons issus de 1150 sites). Les données sont rendues interopérable grâce à des référentiels standardisés (e.g. ,).\n\nElle a été principalement développée par Alexandre Disser et Sylvain Bauvais à l’IRAMAT-CNRS.\n\n\n\n\n\nloupe de fer"
+    "section": "package iRamat",
+    "text": "package iRamat\n\n\nWIAI: - Présentation du package R iRamat - support | video - Mardi 7 octobre 2025, 10:00 - 10:50"
   },
   {
-    "objectID": "index.html#architecture",
-    "href": "index.html#architecture",
+    "objectID": "index.html#todo-1",
+    "href": "index.html#todo-1",
     "title": "ALMACIR",
-    "section": "Architecture",
-    "text": "Architecture\n\nMCDStandardsTechnologiesCHIPS et CHIPS dev\n\n\n\n\nModèle conceptuel de données simplifié\n\n\n\n\n\nStandards et isostandards:\n\n : répertoire de périodes (PID: ark)\n : thésaurus pour l’archéologie (PID: ark)\n: thésaurus pour les objets d’art et architecture (PID: aat)\n1: pour des dates fuzzy ou très précises (timestamped)\n\n\npour faciliter l’intéropérabilité de ses données\n\n\n\nTechnologies matures et open-source :\n\n : OS2 de la plupart des serveurs web.\n : SGBD3 open-source proche d’Oracle.\n : langage de programmation le plus utilisé au monde.\n : standard d’interface de programmation d’applications sur le web.\n\n\npour garantir la maintenance des données sur le long terme\n\n\n\n\n\nCHIPS: accès et ouverture sur le web limités\nCHIPS dev: clone de CHIPS ouverte sur le web (dashboard)\n\n\nCHIPS\n\nC R U D\n\n\n\n\n\n 🠮 🠮 🠮 copy data only 🠮 🠮 🠮\n\n\n\nCHIPS dev\n\nC R U D"
+    "section": "⏳ TODO",
+    "text": "⏳ TODO\n\n\n\nMutualisation et mise en fonction documentées des scripts R “tapés au km”\nfonctions spécifiques pour la numismatique"
   },
   {
-    "objectID": "index.html#plateforme-geo",
-    "href": "index.html#plateforme-geo",
+    "objectID": "index.html#github---généralités",
+    "href": "index.html#github---généralités",
     "title": "ALMACIR",
-    "section": "Plateforme GEO",
-    "text": "Plateforme GEO"
+    "section": "GitHub - Généralités",
+    "text": "GitHub - Généralités\n\n\nWIAI: Présentation de GitHub - support | video- Mardi 8 juillet 2025, 10:00 - 10:50"
   },
   {
-    "objectID": "index.html#dashboard-12",
-    "href": "index.html#dashboard-12",
+    "objectID": "index.html#almacir-sur-github",
+    "href": "index.html#almacir-sur-github",
     "title": "ALMACIR",
-    "section": "Dashboard  (1/2)",
-    "text": "Dashboard  (1/2)\n\nObjectifDatasetsEchantillons\n\n\n\n\nOffir une vue synthétique du contenu de la BDD CHIPS ; faciliter l’identification, l’accès, l’intéropérabilité et la réutilisation des données\n\nCréer du code modulaire pour sa réutilisabilité (code as data)\n\n\n\n\n\n\n\n\n\n\n\nIndexation spatiale et par jeux de données (datasets)\n\n\n\n\n\n\n\n\n\nIndexation spatiale"
+    "section": "ALMACIR sur GitHub",
+    "text": "ALMACIR sur GitHub\n\nRepo publicRepo privé\n\n\n\n\nhttps://github.com/iramat/almacir ( = branche main2): Données publiques: données de référence, images, présentations, code informatique (non R), etc.\n\n\n\n\n\n\n\nhttps://github.com/iramat/almacir-private ( main uniquement)"
   },
   {
-    "objectID": "index.html#dashboard-22",
-    "href": "index.html#dashboard-22",
+    "objectID": "index.html#todo-2",
+    "href": "index.html#todo-2",
     "title": "ALMACIR",
-    "section": "Dashboard  (2/2)",
-    "text": "Dashboard  (2/2)\n\nAPI des échantillonsLive demo"
+    "section": "⏳ TODO",
+    "text": "⏳ TODO\n\ninscription sur GitHub"
   },
   {
-    "objectID": "index.html#analyses-avec-r",
-    "href": "index.html#analyses-avec-r",
+    "objectID": "index.html#zenodo---généralités",
+    "href": "index.html#zenodo---généralités",
     "title": "ALMACIR",
-    "section": "Analyses avec R ",
-    "text": "Analyses avec R \n\nUn datasetUn dataset (chronologie)Tous les datasets\n\n\n\nlibrary(iRamat)\n\ndf &lt;- db_api_connect()\nnames(df)\n\n[1] \"dataset_adisser17\"\n\n\n\ndf$dataset_adisser17 %&gt;%\n  select(-reference) %&gt;%\n  head(10) %&gt;%\n  kable(\"html\") %&gt;%\n  kable_styling(font_size = 18)\n\n\n\n\nsite_name\nid_chips\nlongitude\nlatitude\nedtf\nsample_name\ntypology\nna\nmg\nal\nsi\np\ns\ncl\nk\nca\nmn\nfe\nloi\nag\narsenic\nba\nbe\nbi\ncd\nce\nco\ncr\ncs\ncu\ndy\ner\neu\ndeltafe56\ndeltafe57\nga\ngd\nge\nhf\nho\nindium\nla\nli\nlu\nmo\nnb\nnd\nni\nos\nos187_os188\nos187_os186\npb\npd\npr\nrb\nru\nsb\nsc\nse\nsm\nsn\nsr\nsr87_sr86\nta\ntb\nte\nth\nti\ntl\ntm\nu\nv\nw\ny\nyb\nzn\nzr\nmajor_method\nmajor_analytical_setup\ntrace_method\ntrace_analytical_setup\nurl\n\n\n\n\nAux Minières\n4967\n5.8506\n49.4950\nNA\nMINHAO108-A\nOre\n0.04\n0.03\n3.23\n4.45\n0.04\n0.00\n0\n0.07\n0.09\n0.03\n53.17\n7.90\nNA\n578.900\n20.31\n13.500\n0.308\n0.325\n56.06\n26.590\n214.9\n0.971\n5.587\n5.025\n2.637\n1.387\nNA\nNA\n7.478\n4.960\n2.610\n1.431\n0.938\n0.475\n21.24\nNA\n0.372\n5.362\n2.808\n24.37\n63.140\nNA\nNA\nNA\n113.8444\nNA\n6.119\n4.692\nNA\n127.50\n1.342\nNA\n6.095\n0.945\n43.73\nNA\n0.227\n0.843\nNA\n17.38\n0.092\nNA\n0.397\n9.352\n857.3\n0.563\n22.17\n2.776\n112.60\n58.04\nICP-OES\nCRPG - Thermo Fisher Scientific Icap 6500\nICP-OES\nCRPG - Thermo Fisher Scientific Icap 6500\nhttps://onlinelibrary.wiley.com/doi/full/10.1111/arcm.12265\n\n\nAux Minières\n4968\n5.8506\n49.4950\nNA\nMINHAO108-B\nOre\n0.03\n0.03\n4.57\n8.40\n0.04\n0.00\n0\n0.02\n0.11\n0.04\n43.30\n10.57\nNA\n1010.000\n12.87\n9.351\n0.193\n0.296\n47.05\n27.430\n341.7\n0.221\n63.670\n4.556\n2.518\n1.103\nNA\nNA\n5.733\n4.166\n1.560\n2.771\n0.908\n0.806\n24.99\nNA\n0.354\n4.121\n2.977\n18.26\n81.020\nNA\nNA\nNA\n117.9742\nNA\n5.025\n2.133\nNA\n47.82\n1.333\nNA\n4.576\n0.911\n86.50\nNA\n0.253\n0.748\nNA\n55.21\n0.094\nNA\n0.364\n4.369\n3957.0\n0.663\n23.34\n2.575\n113.70\n118.50\nICP-OES\nCRPG - Thermo Fisher Scientific Icap 6500\nICP-OES\nCRPG - Thermo Fisher Scientific Icap 6500\nhttps://onlinelibrary.wiley.com/doi/full/10.1111/arcm.12265\n\n\nAux Minières\n71\n5.8506\n49.4950\nNA\nSCHAO 108a\nSmelting Slag\n0.52\n0.22\n3.43\n9.54\n0.11\n0.21\nNA\n1.03\n0.94\n0.09\n52.61\nNA\nNA\n5.200\n93.00\n7.270\n0.010\n0.030\n122.00\n1.300\n110.0\n2.380\n4.100\n18.650\n10.700\n4.500\nNA\nNA\n5.800\n20.800\n0.960\n4.700\n3.740\n0.020\n58.10\nNA\n1.490\n2.740\n9.600\n79.40\n1.000\nNA\nNA\nNA\n5.7000\nNA\n18.250\n20.500\nNA\n0.08\n14.900\nNA\n20.400\n1.000\n82.60\nNA\n0.670\n3.350\nNA\n15.70\n0.097\nNA\n1.690\n2.400\n144.0\n3.000\n119.00\n10.100\n23.00\n195.00\nICP-MS\nALS Chemex - Unknown ME-MS61\nICP-MS\nALS Chemex - Unknown ME-MS61\nhttps://onlinelibrary.wiley.com/doi/full/10.1111/arcm.12265\n\n\nAux Minières\n72\n5.8506\n49.4950\nNA\nSCHAO 108b\nSmelting Slag\n0.03\n0.08\n3.07\n10.61\n0.04\n0.01\nNA\n0.58\n0.76\n0.12\n53.59\nNA\nNA\n2.300\n172.50\n11.650\n0.060\n0.020\n146.00\n0.500\n137.0\n4.230\n3.700\n21.300\n11.950\n5.090\nNA\nNA\n6.000\n23.500\n0.800\n6.600\n4.220\n0.010\n66.50\nNA\n1.680\n0.480\n11.800\n93.90\n0.600\nNA\nNA\nNA\n30.2000\nNA\n21.300\n36.100\nNA\n0.05\n19.300\nNA\n24.100\n1.000\n147.00\nNA\n0.800\n3.700\nNA\n20.00\n0.083\nNA\n1.860\n2.800\n522.0\n4.000\n138.50\n11.300\n4.00\n278.00\nICP-MS\nALS Chemex - Unknown ME-MS61\nICP-MS\nALS Chemex - Unknown ME-MS61\nhttps://onlinelibrary.wiley.com/doi/full/10.1111/arcm.12265\n\n\nAux Minières\n73\n5.8506\n49.4950\nNA\nSCHAO 108c\nSmelting Slag\n0.07\n0.10\n3.69\n10.04\n0.03\n0.01\nNA\n0.67\n0.97\n0.10\n53.19\nNA\nNA\n2.500\n174.00\n7.330\n0.010\n0.020\n95.30\n0.500\n118.0\n2.720\n3.600\n17.400\n10.350\n3.840\nNA\nNA\n6.400\n18.450\n0.760\n4.900\n3.510\n0.010\n46.20\nNA\n1.550\n0.790\n12.200\n64.40\n0.500\nNA\nNA\nNA\n3.1000\nNA\n14.300\n28.900\nNA\n0.05\n15.300\nNA\n16.900\n1.000\n60.60\nNA\n0.750\n3.030\nNA\n12.30\n0.046\nNA\n1.630\n2.200\n397.0\n6.000\n105.00\n10.050\n15.00\n216.00\nICP-MS\nALS Chemex - Unknown ME-MS61\nICP-MS\nALS Chemex - Unknown ME-MS61\nhttps://onlinelibrary.wiley.com/doi/full/10.1111/arcm.12265\n\n\nAux Minières\n4973\n5.8506\n49.4950\nNA\nSLHAO108-A\nSmelting Slag\n0.12\n0.24\n3.44\n16.17\n0.13\n0.00\n0\n0.76\n0.92\n0.11\n42.26\n-5.23\nNA\n7.245\n110.50\n10.520\n-0.001\n0.131\n89.76\n1.378\n155.4\n2.225\n5.491\n14.130\n8.028\n3.319\nNA\nNA\n7.276\n13.860\n0.590\n5.377\n2.821\n0.197\n39.26\nNA\n1.177\n0.971\n8.751\n51.53\n-0.001\nNA\nNA\nNA\n3.0746\nNA\n12.090\n29.830\nNA\n20.83\n-0.001\nNA\n13.520\n0.627\n69.98\nNA\n0.647\n2.342\nNA\n14.67\n0.251\nNA\n1.236\n2.607\n599.8\n4.843\n83.14\n8.150\n31.42\n232.10\nICP-OES\nCRPG - Thermo Fisher Scientific Icap 6500\nICP-OES\nCRPG - Thermo Fisher Scientific Icap 6500\nhttps://onlinelibrary.wiley.com/doi/full/10.1111/arcm.12265\n\n\nAux Minières\n4974\n5.8506\n49.4950\nNA\nSLHAO108-B\nSmelting Slag\n0.08\n0.41\n3.88\n15.01\n0.18\n0.00\n0\n0.75\n1.25\n0.13\n43.16\n-5.01\nNA\n11.860\n125.90\n14.480\n-0.001\n0.201\n127.30\n1.984\n185.9\n2.613\n7.385\n17.850\n10.290\n4.674\nNA\nNA\n7.016\n19.010\n1.061\n5.098\n3.661\n0.279\n54.33\nNA\n1.510\n1.722\n8.280\n75.89\n11.310\nNA\nNA\nNA\n2.2696\nNA\n17.660\n30.320\nNA\n26.83\n-0.001\nNA\n19.670\n0.707\n104.70\nNA\n0.657\n2.978\nNA\n19.18\n0.255\nNA\n1.601\n2.557\n569.1\n6.268\n113.20\n10.300\n24.08\n223.20\nICP-OES\nCRPG - Thermo Fisher Scientific Icap 6500\nICP-OES\nCRPG - Thermo Fisher Scientific Icap 6500\nhttps://onlinelibrary.wiley.com/doi/full/10.1111/arcm.12265\n\n\nBigerling F70\n698\n6.0227\n49.3086\n-0025?~/0450?~\n2271\nSmelting Tap slag Slag\n0.11\n1.23\n5.48\n13.96\n0.86\nNA\nNA\n1.53\n9.63\n0.40\n30.51\n-3.98\nNA\n12.300\n218.00\n10.200\n0.020\n0.020\n165.00\n9.700\n275.0\n1.190\n8.300\n22.500\n9.080\n5.180\nNA\nNA\n5.750\n17.800\n0.350\n5.180\n4.280\n0.050\n67.90\nNA\n1.970\n1.570\n13.800\n79.70\n11.400\nNA\nNA\nNA\n6.4800\nNA\n16.100\n25.300\nNA\n0.22\nNA\nNA\n25.100\n0.590\n237.00\nNA\n0.780\n3.210\nNA\n33.80\n0.300\nNA\n1.580\n4.090\n776.0\n1.970\n122.00\n12.800\n133.00\n293.00\nICP-OES\nCRPG - Thermo Fisher Scientific Icap 6500\nICP-OES\nCRPG - Thermo Fisher Scientific Icap 6500\nhttps://onlinelibrary.wiley.com/doi/full/10.1111/arcm.12265\n\n\nBois dHaouy 01\n74\n5.8537\n49.5021\n0375?~/0600?~\nSCHAO 103a\nSmelting Slag\n0.08\n0.12\n3.13\n10.17\n0.03\n0.03\nNA\n0.64\n0.91\n0.12\n53.84\nNA\nNA\n8.100\n128.00\n9.170\n0.010\n0.020\n81.60\n1.000\n87.0\n1.870\n2.900\n10.550\n5.180\n2.920\nNA\nNA\n3.400\n13.400\n0.780\n4.000\n1.900\n0.010\n47.70\nNA\n0.660\n1.200\n7.300\n59.70\n2.100\nNA\nNA\nNA\n51.2000\nNA\n14.650\n32.500\nNA\n0.05\n9.500\nNA\n14.000\n1.000\n59.80\nNA\n0.400\n1.890\nNA\n11.30\n0.158\nNA\n0.750\n3.200\n118.0\n2.000\n62.50\n5.130\n12.00\n143.50\nICP-MS\nALS Chemex - Unknown ME-MS61\nICP-MS\nALS Chemex - Unknown ME-MS61\nhttps://onlinelibrary.wiley.com/doi/full/10.1111/arcm.12265\n\n\nBois dHaouy 01\n75\n5.8537\n49.5021\n0375?~/0600?~\nSCHAO 103b\nSmelting Slag\n0.09\n0.24\n5.27\n13.76\n0.04\n0.04\nNA\n1.01\n1.41\n0.14\n43.52\nNA\nNA\n4.900\n72.80\n7.100\n0.010\n0.020\n72.90\n2.200\n59.0\n1.270\n3.900\n10.100\n4.830\n2.490\nNA\nNA\n4.400\n11.500\n0.860\n3.200\n1.790\n0.010\n33.60\nNA\n0.670\n5.760\n5.900\n47.30\n3.000\nNA\nNA\nNA\n3.2000\nNA\n11.550\n22.900\nNA\n0.05\n11.200\nNA\n12.700\n1.000\n33.60\nNA\n0.360\n1.770\nNA\n8.10\n0.137\nNA\n0.720\n2.500\n67.0\n2.000\n52.20\n5.030\n27.00\n127.00\nICP-MS\nALS Chemex - Unknown ME-MS61\nICP-MS\nALS Chemex - Unknown ME-MS61\nhttps://onlinelibrary.wiley.com/doi/full/10.1111/arcm.12265\n\n\n\n\n\n\n\n\n\n\nchrono(d = df$dataset_adisser17)\n\n\n\ndf &lt;- db_api_connect(all_datasets = TRUE)\n# all_datasets = TRUE: collecting all datasets from urls_data.tsv\n# Requesting: http://157.136.252.188:3000/dataset_tyoungxx\n# Requesting: http://157.136.252.188:3000/dataset_adisser17\n# Requesting: http://157.136.252.188:3000/dataset_gzabinski23\n# Requesting: http://157.136.252.188:3000/dataset_gpages22\n# Requesting: http://157.136.252.188:3000/dataset_vserneels93\n# Requesting: http://157.136.252.188:3000/dataset_sleroy12\n# Requesting: http://157.136.252.188:3000/dataset_pdillmann17\n# Requesting: http://157.136.252.188:3000/dataset_amdesaulty8a\n# Requesting: http://157.136.252.188:3000/dataset_amdesaulty8b\n# Requesting: http://157.136.252.188:3000/dataset_jmilot16\n# Requesting: http://157.136.252.188:3000/dataset_mpcoustures06\n# Requesting: http://157.136.252.188:3000/dataset_gstdidier17\n# Requesting: http://157.136.252.188:3000/dataset_mbrauns13\n# Requesting: http://157.136.252.188:3000/dataset_lheritier20\n# Requesting: http://157.136.252.188:3000/dataset_mleroy97\n# Requesting: http://157.136.252.188:3000/dataset_mleroy24\n# Requesting: http://157.136.252.188:3000/dataset_leschenlohr01\n# Requesting: http://157.136.252.188:3000/dataset_tivancan21\n# Requesting: http://157.136.252.188:3000/dataset_pmameli14\n# Requesting: http://157.136.252.188:3000/dataset_kmittelstaedt22\n# Requesting: http://157.136.252.188:3000/dataset_mbenvenuti13\n# Collected and merged 21 datasets. Total rows: 3225"
+    "section": "Zenodo - Généralités",
+    "text": "Zenodo - Généralités\nEntrepot de données (self-archiving), fournisseur de DOI intégrant le protocole OAI-PMH3, des API (Python, GitHub, etc),"
   },
   {
-    "objectID": "index.html#perspectives",
-    "href": "index.html#perspectives",
+    "objectID": "index.html#zenodo---historique",
+    "href": "index.html#zenodo---historique",
     "title": "ALMACIR",
-    "section": "Perspectives",
-    "text": "Perspectives\nProchaines étapes du développement de la BDD CHIPS :\n\nDashboard : amélioration de l’interface, nouveaux outils de visualisation, de sélection et d’export ;\nun data pipeline entre l’API des datasets et  pour un dépôt standardisé et semi-automatique ;\nnouvelles fonctions  ( package  ) ;\ninterface graphique utilisateur (GUI) avec  pour la saisie des données."
+    "section": "Zenodo - historique",
+    "text": "Zenodo - historique\nCréé et hébergé au CERN4, dans le cadre d’ OpenAIRE5, sauvegarde des données sur le Data Center du CERN"
+  },
+  {
+    "objectID": "index.html#almacir-sur-zenodo",
+    "href": "index.html#almacir-sur-zenodo",
+    "title": "ALMACIR",
+    "section": "ALMACIR sur Zenodo",
+    "text": "ALMACIR sur Zenodo\n\nCommunauté “IRAMAT”Données\n\n\nhttps://zenodo.org/communities/iramat/\n\n\n\n\nfiltrer les données ALMACIR avec https://zenodo.org/communities/iramat/records?q=&f=subject%3ANumismatics&l=list&p=1&s=10&sort=newest"
+  },
+  {
+    "objectID": "index.html#todo-3",
+    "href": "index.html#todo-3",
+    "title": "ALMACIR",
+    "section": "⏳ TODO",
+    "text": "⏳ TODO\n\ninscription sur Zenodo\nédition des métadonnées"
+  },
+  {
+    "objectID": "index.html#framework-hugo---généralités",
+    "href": "index.html#framework-hugo---généralités",
+    "title": "ALMACIR",
+    "section": "Framework Hugo - Généralités",
+    "text": "Framework Hugo - Généralités\nLogiciel open source pour la génération de sites statiques (comme Hypotheses.org)"
+  },
+  {
+    "objectID": "index.html#site-web-dalmacir",
+    "href": "index.html#site-web-dalmacir",
+    "title": "ALMACIR",
+    "section": "Site web d’ALMACIR",
+    "text": "Site web d’ALMACIR\nhttps://iramat.github.io/almacir/"
+  },
+  {
+    "objectID": "index.html#todo-4",
+    "href": "index.html#todo-4",
+    "title": "ALMACIR",
+    "section": "⏳ TODO",
+    "text": "⏳ TODO\n\ninternationalisation du site web"
   },
   {
     "objectID": "index.html#footnotes",
     "href": "index.html#footnotes",
     "title": "ALMACIR",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nISO 8601-2:2019\nOperating System, système d’exploitation\nSystème de Gestion de Bases de Données"
+    "text": "Footnotes\n\n\nAmerican Numismatic Society\nAutres branches: hugo-files et gh-pages: génération du site web Hugo; dev: développement informatique\nOpen Archives Initiative Protocol for Metadata Harvesting\nCentre Européen pour la Recherche Nucléaire\nnutshell européenne pour la Science Ouverte"
   }
 ]

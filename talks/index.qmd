@@ -6,11 +6,12 @@ author:
     affiliation: 
       - id: cnrs
         name: <span style="font-size:17pt">IRAMAT-CNRS</span>
-# title-slide-attributes:
-#     data-background-image: "https://raw.githubusercontent.com/iramat/iramat-dev/master/img/ana-xrf-pymca-ex.png"
-#     data-background-size: "90%"
-#     data-background-opacity: "0.2"
-#     data-notes: Lorem
+title-slide-attributes:
+    data-background-image: "https://raw.githubusercontent.com/iramat/almacir/master/img/app-web-seo-google-sijilmasa-dinar-gold.png" 
+    # data-background-repeat: "repeat"
+    data-background-size: "110%"
+    data-background-opacity: "0.2"
+    data-notes: Lorem
 format:
   revealjs: 
     css: https://zoometh.github.io/thomashuet/css/quarto.css
@@ -50,7 +51,7 @@ library(kableExtra)
 :::: {.columns}
 
 ::: {.column width="50%"}
-Suite d'applications _open source_ permettant de gérer les artefacts du CH numérique, particulièrement pour la numismatique. L'adoption de normes et des bonnes pratiques communes des bibliothèques/archives/musées garantit la durabilité et la conservation à long terme des données.
+Suite d'applications _open source_ pour la gestion des collections numismatiques. Normes et pratiques communes des bibliothèques/archives/musées pour la durabilité et l'interopérabilité des données.
 :::
 
 ::: {.column width="50%"}
@@ -93,52 +94,56 @@ flowchart TB
 
 :::
 
-## ALMACIR par Numishare
+## ALMACIR sur Numishare
 
-::: {.panel-tabset}
-
-### Déploiement des parties
-
-### URLs actives
-
-- Tomcat: http://157.136.252.188:8080
-
-- Orbeon: http://157.136.252.188:8080/orbeon/
-
-- Numishare Admin: http://157.136.252.188:8080/orbeon/numishare/admin/
-
-- eXist-db Dashboard: http://157.136.252.188:8888/exist/apps/dashboard/admin
-
-- IIIF Server: http://157.136.252.188:8182/iiif/2
-
-
-### Synthèse
+<br>
 
 Numishare est déployé et opérationnel en mode `admin`.
 
-:::
+<br>
 
-## TODO
+| Applications    | URLs |
+| -------- | ------- |
+| Tomcat  | <http://157.136.252.188:8080>    |
+| Orbeon | <http://157.136.252.188:8080/orbeon/>    |
+| Numishare    | <http://157.136.252.188:8080/orbeon/numishare/>   |
 
-Alimenter les données, activer Solr, et finaliser l’exposition publique
+## ⏳ TODO 
 
+- Alimenter les données, activer Solr, et finaliser l’exposition publique (production)
+- <http://157.136.252.188> (HTTP) -> <https://iramat-apps.cnrs.fr/> (HTTPS)
 
 # Analyses statistiques
 
 ## package iRamat
-
-[WIAI](https://github.com/iramat#-wiai): - **Présentation du package R `iRamat`** - [support](https://iramat.github.io/iramat-dev/talks/2025-wiai-iRamat/pres) | [video](https://sdrive.cnrs.fr/s/yP5DFgGXtF9ERQH) - Mardi 7 octobre 2025, 10:00 - 10:50
-
-## TODO
 
 
 :::: {.columns}
 
 ::: {.column width="50%"}
 
-- Mise en fonction de <https://github.com/iramat/iRamat-private/tree/main/R/extraction_la_icp_ms/Alex/Nist>
-- fonctions spécifiques pour la numismatique
+[WIAI](https://github.com/iramat#-wiai): - **Présentation du package R `iRamat`** - [support](https://iramat.github.io/iramat-dev/talks/2025-wiai-iRamat/pres) | [video](https://sdrive.cnrs.fr/s/yP5DFgGXtF9ERQH) - Mardi 7 octobre 2025, 10:00 - 10:50
 
+:::
+::: {.column width="50%"}
+
+<img src='https://raw.githubusercontent.com/iramat/iramat-dev/master/img/prg-R-iRamat-github-pres.png' style='width: 750px;vertical-align: middle;'>
+
+:::
+
+::::
+
+
+
+## ⏳ TODO 
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+- Mutualisation et mise en fonction documentées des scripts R "tapés au km" 
+- fonctions spécifiques pour la numismatique
 
 :::
 
@@ -157,7 +162,21 @@ Alimenter les données, activer Solr, et finaliser l’exposition publique
 ## GitHub - Généralités
 
 
+:::: {.columns}
+
+::: {.column width="50%"}
+
 [WIAI](https://github.com/iramat#-wiai): **Présentation de GitHub** - [support](https://iramat.github.io/iramat-dev/talks/2025-wiai-github/pres) | [video](https://sdrive.cnrs.fr/s/kZ32eLX6js6rBSW)- Mardi 8 juillet 2025, 10:00 - 10:50
+
+:::
+::: {.column width="50%"}
+
+<img src='https://raw.githubusercontent.com/iramat/iramat-dev/master/img/github-iramat-org.png' style='width: 750px;vertical-align: middle;'>
+
+:::
+
+::::
+
 
 ## ALMACIR sur GitHub
 
@@ -165,20 +184,18 @@ Alimenter les données, activer Solr, et finaliser l’exposition publique
 
 ### Repo public
 
-<https://github.com/iramat/almacir>
-
 :::: {.columns}
 
 ::: {.column width="50%"}
-**branches**
 
-- [main](https://github.com/iramat/almacir/tree/main): (par défaut). Données publiques (dont images, présentations)
-- [hugo-files](https://github.com/iramat/almacir/tree/hugo-files) et [gh-pages]( https://github.com/iramat/almacir/tree/gh-pages): génération du site web Hugo
-- [dev](https://github.com/iramat/almacir/tree/dev): développement informatique
+<https://github.com/iramat/almacir> ( = branche [main](https://github.com/iramat/almacir/tree/main)[^6]): Données publiques: données de référence, images, présentations, code informatique (non R), etc.
+
+[^6]: Autres branches: [hugo-files](https://github.com/iramat/almacir/tree/hugo-files) et [gh-pages](https://github.com/iramat/almacir/tree/gh-pages): génération du site web Hugo; [dev](https://github.com/iramat/almacir/tree/dev): développement informatique
 
 :::
 
 ::: {.column width="50%"}
+<br>
 
 <img src='https://raw.githubusercontent.com/iramat/almacir/master/img/app-github-almacir-data-public.png' style='width: 750px;vertical-align: middle;'> 
 
@@ -190,16 +207,17 @@ Alimenter les données, activer Solr, et finaliser l’exposition publique
 
 ### Repo privé
 
-<https://github.com/iramat/almacir-private>
+
 
 ::: {.column width="50%"}
-**branches**
 
-- [main](https://github.com/iramat/almacir-private/tree/main): (par défaut). 
+<https://github.com/iramat/almacir-private> ([main](https://github.com/iramat/almacir-private/tree/main) uniquement) 
 
 :::
 
 ::: {.column width="50%"}
+
+<br>
 
 <img src='https://raw.githubusercontent.com/iramat/almacir/master/img/app-github-almacir-issue-private.png' style='width: 750px;vertical-align: middle;'> 
 
@@ -207,7 +225,7 @@ Alimenter les données, activer Solr, et finaliser l’exposition publique
 
 ::::
 
-## TODO
+## ⏳ TODO 
 
 - inscription sur GitHub
 
@@ -233,6 +251,7 @@ Créé et hébergé au CERN[^3], dans le cadre d' OpenAIRE[^4], sauvegarde des d
 
 ### Communauté "IRAMAT"
 
+<https://zenodo.org/communities/iramat/>
 
 <img src='https://raw.githubusercontent.com/iramat/iramat-dev/master/img/zenodo-community-iramat-members.png' style='width: 750px;vertical-align: middle;'>
 
@@ -244,9 +263,10 @@ filtrer les données ALMACIR avec <https://zenodo.org/communities/iramat/records
 
 :::
 
-## TODO
+## ⏳ TODO 
 
 - inscription sur Zenodo
+- édition des métadonnées
 
 # Site web
 
@@ -260,7 +280,7 @@ Logiciel _open source_ pour la génération de sites statiques (comme Hypotheses
 
 <img src='https://raw.githubusercontent.com/iramat/almacir/master/img/app-website-presentation-hugo.png' style='width: 750px;vertical-align: middle;'> 
 
-## TODO
+## ⏳ TODO 
 
 - internationalisation du site web
 
@@ -268,6 +288,7 @@ Logiciel _open source_ pour la génération de sites statiques (comme Hypotheses
 # Discussion
 
 - Zenodo _vs_ Nakala
+- IIIF Server: http://157.136.252.188:8182/iiif/2
 
 
 # Liens {background-image="https://raw.githubusercontent.com/iramat/almacir/master/img/app-web-seo-google-sijilmasa-dinar-gold.png" background-opacity=0.3 background-size="800px" background-repeat="repeat"}
