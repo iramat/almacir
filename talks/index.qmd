@@ -270,7 +270,7 @@ Logiciel _open source_ pour la génération de sites statiques (comme Hypotheses
 - Zenodo _vs_ Nakala
 
 
-# Liens {background-image="https://raw.githubusercontent.com/zoometh/thomashuet/master/img/r-pkg--repo-public-github.png" background-opacity=0.3 background-size="800px" background-repeat="repeat"}
+# Liens {background-image="https://raw.githubusercontent.com/iramat/almacir/master/img/app-web-seo-google-sijilmasa-dinar-gold.png" background-opacity=0.3 background-size="800px" background-repeat="repeat"}
 
 * Site web:     <https://iramat.github.io/chips>
 * GitHub:       <https://github.com/iramat/chips>
