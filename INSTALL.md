@@ -109,15 +109,29 @@ flowchart TB
     - http://157.136.252.188:8182/iiif/2/test.jpg/full/full/0/default.jpg
   - Technologies: Cantaloupe, IIIF Image API 2.1
 
+✔️ Tomcat fonctionne et sert Orbeon
+
+✔️ Orbeon Forms charge correctement l’app Numishare
+
+✔️ page-flow.xml est bien résolu
+
+✔️ ui/xslt/root.xsl est accessible par Orbeon (symlink OK)
+
+✔️ eXist-db répond en REST
+
+✔️ Collection demo existe dans eXist
+
+✔️ config.xml est accessible
+
+✔️ Admin Numishare fonctionne
+
+✔️ Front public /numishare/ fonctionne
+
 ---
 
 ## ⏳ To Do
 
 - [ ] **Create initial Numishare collection configuration**
-  - Create `config.xml` in:
-    ```
-    /db/numishare/demo/config.xml
-    ```
   - Define:
     - collection type
     - IIIF image server URL
