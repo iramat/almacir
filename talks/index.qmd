@@ -39,11 +39,9 @@ library(dplyr)
 library(kableExtra)
 ```
 
-# IT
-
 # Base de données
 
-## Numishare - Généralités
+## Numishare
 
 ::: {.panel-tabset}
 
@@ -52,7 +50,7 @@ library(kableExtra)
 :::: {.columns}
 
 ::: {.column width="50%"}
-Suite d'applications OS permettant de gérer les artefacts du CH numérique, particulièrement pour la numismatique. L'adoption de normes et des bonnes pratiques communes des bibliothèques/archives/musées garantit la durabilité et la conservation à long terme des données.
+Suite d'applications _open source_ permettant de gérer les artefacts du CH numérique, particulièrement pour la numismatique. L'adoption de normes et des bonnes pratiques communes des bibliothèques/archives/musées garantit la durabilité et la conservation à long terme des données.
 :::
 
 ::: {.column width="50%"}
@@ -65,56 +63,212 @@ Suite d'applications OS permettant de gérer les artefacts du CH numérique, par
 
 ### Historique
 
+Collection numismatique du Musée d'art de l'Université de Virginie hébergé par le Scholars' Lab. Le projet a débuté à l'automne 2007 et le code a été rendu _open source_ à l'été 2009. Développé et maintenu par l' ANS[^1] et utilisé pour sa collection en ligne
+
+[^1]: _American Numismatic Society_
+
+### MCD
+
+```{mermaid}
+flowchart TB
+    Browser["🌐 Web Browser<br/>(User / Admin / API)"]
+    subgraph Numishare stack
+        Tomcat["🧱 Apache Tomcat 9<br/>Port 8080"]
+        Orbeon["📄 Orbeon Forms CE<br/>Context: /orbeon"]
+        Numishare["🪙 Numishare App<br/>/orbeon/numishare"]
+        Exist["🗄️ eXist-db<br/>Port 8888<br/>NUDS / RDF / Config"]
+        Solr["🔍 Apache Solr<br/>Port 8983<br/>Core: numishare"]
+        Cantaloupe["🖼️ Cantaloupe IIIF<br/>Base: /iiif/2/"]
+        Images["💾 Image Storage<br/>/home/ubuntu/data/numishare/images"]
+    end
+
+    Browser -->|HTTP/S| Tomcat
+    Tomcat --> Orbeon
+    Orbeon --> Numishare
+    Numishare --> Exist
+    Numishare --> Solr
+    Numishare --> Cantaloupe
+    Cantaloupe --> Images
+```
+
+:::
+
+## ALMACIR par Numishare
+
+::: {.panel-tabset}
+
+### Déploiement des parties
+
+### URLs actives
+
+- Tomcat: http://157.136.252.188:8080
+
+- Orbeon: http://157.136.252.188:8080/orbeon/
+
+- Numishare Admin: http://157.136.252.188:8080/orbeon/numishare/admin/
+
+- eXist-db Dashboard: http://157.136.252.188:8888/exist/apps/dashboard/admin
+
+- IIIF Server: http://157.136.252.188:8182/iiif/2
 
 
+### Synthèse
 
-## BDD ALMACIR par Numishare
+Numishare est déployé et opérationnel en mode `admin`.
 
+:::
+
+## TODO
+
+Alimenter les données, activer Solr, et finaliser l’exposition publique
 
 
 # Analyses statistiques
 
 ## package iRamat
 
+[WIAI](https://github.com/iramat#-wiai): - **Présentation du package R `iRamat`** - [support](https://iramat.github.io/iramat-dev/talks/2025-wiai-iRamat/pres) | [video](https://sdrive.cnrs.fr/s/yP5DFgGXtF9ERQH) - Mardi 7 octobre 2025, 10:00 - 10:50
+
+## TODO
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+- Mise en fonction de <https://github.com/iramat/iRamat-private/tree/main/R/extraction_la_icp_ms/Alex/Nist>
+- fonctions spécifiques pour la numismatique
+
+
+:::
+
+::: {.column width="50%"}
+
+<img src='https://raw.githubusercontent.com/iramat/iramat-dev/master/img/prg-R-iRamat-function-extractICP.png' style='width: 750px;vertical-align: middle;'>
+
+:::
+
+::::
+
+
+
 # GitHub
 
 ## GitHub - Généralités
 
+
+[WIAI](https://github.com/iramat#-wiai): **Présentation de GitHub** - [support](https://iramat.github.io/iramat-dev/talks/2025-wiai-github/pres) | [video](https://sdrive.cnrs.fr/s/kZ32eLX6js6rBSW)- Mardi 8 juillet 2025, 10:00 - 10:50
+
 ## ALMACIR sur GitHub
 
-- main: https://github.com/iramat/almacir/tree/main
-- dev: https://github.com/iramat/almacir/tree/dev
-- hugo-files: https://github.com/iramat/almacir/tree/hugo-files
-- gh-pages: https://github.com/iramat/almacir/tree/gh-pages
+::: {.panel-tabset}
+
+### Repo public
+
+<https://github.com/iramat/almacir>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+**branches**
+
+- [main](https://github.com/iramat/almacir/tree/main): (par défaut). Données publiques (dont images, présentations)
+- [hugo-files](https://github.com/iramat/almacir/tree/hugo-files) et [gh-pages]( https://github.com/iramat/almacir/tree/gh-pages): génération du site web Hugo
+- [dev](https://github.com/iramat/almacir/tree/dev): développement informatique
+
+:::
+
+::: {.column width="50%"}
+
+<img src='https://raw.githubusercontent.com/iramat/almacir/master/img/app-github-almacir-data-public.png' style='width: 750px;vertical-align: middle;'> 
+
+:::
+
+::::
+
+
+
+### Repo privé
+
+<https://github.com/iramat/almacir-private>
+
+::: {.column width="50%"}
+**branches**
+
+- [main](https://github.com/iramat/almacir-private/tree/main): (par défaut). 
+
+:::
+
+::: {.column width="50%"}
+
+<img src='https://raw.githubusercontent.com/iramat/almacir/master/img/app-github-almacir-issue-private.png' style='width: 750px;vertical-align: middle;'> 
+
+:::
+
+::::
+
+## TODO
+
+- inscription sur GitHub
+
 
 # Zenodo
 
 ## Zenodo - Généralités
 
+Entrepot de données (_self-archiving_), fournisseur de DOI intégrant le protocole OAI-PMH[^2], des API (Python, GitHub, etc), 
 
+[^2]: _Open Archives Initiative Protocol for Metadata Harvesting_
+
+## Zenodo - historique
+
+Créé et hébergé au CERN[^3], dans le cadre d' OpenAIRE[^4], sauvegarde des données sur le _Data Center_ du CERN
+
+[^3]: Centre Européen pour la Recherche Nucléaire
+[^4]: _nutshell_ européenne pour la Science Ouverte 
 
 ## ALMACIR sur Zenodo
 
-- https://zenodo.org/communities/iramat/records?q=&f=subject%3ANumismatics&l=list&p=1&s=10&sort=newest
+::: {.panel-tabset}
+
+### Communauté "IRAMAT"
+
+
+<img src='https://raw.githubusercontent.com/iramat/iramat-dev/master/img/zenodo-community-iramat-members.png' style='width: 750px;vertical-align: middle;'>
+
+### Données
+
+<img src='https://raw.githubusercontent.com/iramat/iramat-dev/master/img/zenodo-community-iramat-data.png' style='width: 750px;vertical-align: middle;'>
+
+filtrer les données ALMACIR avec <https://zenodo.org/communities/iramat/records?q=&f=subject%3ANumismatics&l=list&p=1&s=10&sort=newest>
+
+:::
+
+## TODO
+
+- inscription sur Zenodo
 
 # Site web
 
 ## _Framework_ Hugo - Généralités
 
+Logiciel _open source_ pour la génération de sites statiques (comme Hypotheses.org)
+
 ## Site web d'ALMACIR
 
-https://iramat.github.io/almacir/
+<https://iramat.github.io/almacir/>
 
-# Développements prévus
+<img src='https://raw.githubusercontent.com/iramat/almacir/master/img/app-website-presentation-hugo.png' style='width: 750px;vertical-align: middle;'> 
+
+## TODO
 
 - internationalisation du site web
-- 
 
-# Discussion 
 
-## Données
+# Discussion
 
-Zenodo vs Nakala
+- Zenodo _vs_ Nakala
+
 
 # Liens {background-image="https://raw.githubusercontent.com/zoometh/thomashuet/master/img/r-pkg--repo-public-github.png" background-opacity=0.3 background-size="800px" background-repeat="repeat"}
 
