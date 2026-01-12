@@ -1,0 +1,442 @@
+---
+title: "ALMACIR"
+subtitle: "Première réunion de l'ANR ALMACIR"
+author:
+  - name: Thomas Huet
+    affiliation: 
+      - id: cnrs
+        name: <span style="font-size:17pt">IRAMAT-CNRS</span>
+# title-slide-attributes:
+#     data-background-image: "https://raw.githubusercontent.com/iramat/iramat-dev/master/img/ana-xrf-pymca-ex.png"
+#     data-background-size: "90%"
+#     data-background-opacity: "0.2"
+#     data-notes: Lorem
+format:
+  revealjs: 
+    css: https://zoometh.github.io/thomashuet/css/quarto.css
+    controls: true
+    auto-stretch: false
+    code-fold: false
+    code-summary: "<small>Code</small>"
+    slide-number: true
+    chalkboard:
+      theme: "whiteboard"
+      color: ['rgba(255, 0, 0, 0.3)'] # red
+    scrollable: true
+    preview-links: auto
+    reference-location: document
+    footnotes-hover: true
+    # self-contained: true
+    # embed-resources: true
+    # logo: https://raw.githubusercontent.com/zoometh/neonet/master/doc/img/neonet.png
+    footer: "T. Huet, A. Disser - <img src='https://raw.githubusercontent.com/zoometh/thomashuet/master/img/inst-cnrs-iramat.png' style='height: 17px;vertical-align: middle;'> - 9 Décembre, 2025, LAPA, Saclay"
+    margin: 0
+    width: 1200
+---
+
+```{r, echo=FALSE}
+library(dplyr)
+library(kableExtra)
+```
+
+# Introduction générale
+
+
+## La série WIAI
+
+:::: {.columns}
+::: {.column width="65%"}
+
+Webinaires dédiés aux technologies de l'information pour l'archéométrie:  <br>
+GitHub <img src='https://raw.githubusercontent.com/zoometh/thomashuet/master/img/app-github.png' style='height: 45px;vertical-align: middle;'>, Python
+<img src='https://raw.githubusercontent.com/zoometh/thomashuet/master/img/app-prg-python-2.png' style='height: 45px;vertical-align: middle;'>, R
+<img src='https://raw.githubusercontent.com/zoometh/thomashuet/master/img/prog-r-1.png' style='height: 45px;vertical-align: middle;'>, API 
+<img src='https://raw.githubusercontent.com/zoometh/thomashuet/master/img/web-api.jpeg' style='height: 45px;vertical-align: middle;'>, IIIF
+<img src='https://raw.githubusercontent.com/zoometh/thomashuet/master/img/lod-iso-iiif.png' style='height: 45px;vertical-align: middle;'>, etc. <br><br>
+
+::: {.callout-note}
+📅 Bimestriel. Le 2<sup>e</sup> Mardi matin, sur ZOOM entre 10h00 et 10h50 (50 minutes), lien sur le [GitHub](https://github.com/iramat#-wiai) et le [calendrier](https://iramat.github.io/iramat-dev/admin/calendrier.html) de l'IRAMAT
+:::
+
+:::
+
+::: {.column width="35%"}
+
+<center>
+
+<img src='https://upload.wikimedia.org/wikipedia/commons/0/06/Michael_Stonebraker_P1120062.jpg' style='width: 350px;vertical-align: middle;'> 
+
+<div class="captiontext"> _"SQL won. Get over it."_ -- Michael Stonebraker, crédit: David Monniaux <img src='https://raw.githubusercontent.com/zoometh/thomashuet/master/img/lod-licences-cc-by-sa.png' style='height: 30px;vertical-align: middle;'></div>
+
+</center>
+
+:::
+
+:::
+
+::: {.notes}
+Découvrir -- ou approfondir -- une solution logicielle open-source en revenant sur l'histoire de ce logiciel, sa logique interne, ... Avec des citations rigolotes
+:::
+
+
+
+## Plan de la présentation
+
+
+1. La BDD CHIPS <img src='https://raw.githubusercontent.com/iramat/iramat-dev/main/img/logo-chips-round.png' style='height: 70px;vertical-align: middle;'>
+2. Intéropérabilité et Réusabilité
+3. Perspectives
+4. Discussion
+
+
+# La BDD CHIPS <img src='https://raw.githubusercontent.com/iramat/iramat-dev/main/img/logo-chips-round.png' style='height: 100px;vertical-align: middle;'>
+
+## Motivations
+
+Malgré l’importance des données de l'archéométallurgie du fer pour reconstruire les techniques anciennes, comprendre les contextes et modéliser les réseaux d’échanges, ➡️ l’absence d’un référentiel chimique partagé a conduit à la l’hétérogénéité des résultats des analyses. 
+\
+\
+CHIPS vise à (i) centraliser, normaliser, rendre interopérables des données, et (ii) identifier, développer et documenter les référentiels, afin de faciliter l'exploitation collective des données de l'archéométallurgie du fer.
+
+
+## Présentation
+
+:::: {.columns}
+
+::: {.column width="75%"}
+
+Base de données <img src='https://raw.githubusercontent.com/zoometh/thomashuet/master/img/app-bd-postgres-2.png' style='height: 40px;vertical-align: middle;'>  destinée aux archéométallurgistes du fer, offrant des milliers d’analyses chimiques révisées et normalisées (6650 échantillons issus de 1150 sites). Les données sont rendues interopérable grâce à des référentiels standardisés (e.g. <img src='https://raw.githubusercontent.com/zoometh/thomashuet/master/img/lod-gazetteer-periodo.png' style='height: 40px;vertical-align: middle;'>,<img src='https://raw.githubusercontent.com/zoometh/thomashuet/master/img/lod-gazetteer-pactols.png' style='height: 50px;vertical-align: middle;'>).
+\
+
+Elle a été principalement développée par Alexandre Disser et Sylvain Bauvais à l'IRAMAT-CNRS.
+
+:::
+
+::: {.column width="25%"}
+<center>
+
+<img src='https://raw.githubusercontent.com/iramat/iramat-dev/master/img/fer.png' style='width: 750px;vertical-align: middle;'>
+
+</center>
+
+<div class="captiontext">loupe de fer</div>
+:::
+
+
+::::
+
+
+
+
+## Architecture
+
+::: {.panel-tabset}
+
+### MCD
+
+:::: {.columns}
+
+::: {.column width="25%"}
+Modèle conceptuel de données simplifié 
+
+:::
+
+::: {.column width="75%"}
+
+<img src='https://raw.githubusercontent.com/iramat/chips/master/img/db_erd.png' style='width: 750px;vertical-align: middle;'> 
+
+:::
+
+::::
+
+### Standards
+
+Standards et isostandards: 
+
+* <img src='https://raw.githubusercontent.com/zoometh/thomashuet/master/img/lod-gazetteer-periodo.png' style='height: 40px;vertical-align: middle;'> : répertoire de périodes (PID: `ark`)
+* <img src='https://raw.githubusercontent.com/zoometh/thomashuet/master/img/lod-gazetteer-pactols.png' style='height: 50px;vertical-align: middle;'> : thésaurus pour l'archéologie (PID: `ark`)
+* <img src='https://raw.githubusercontent.com/zoometh/thomashuet/master/img/lod-gazetteer-aat-2.png' style='height: 50px;vertical-align: middle;'>: thésaurus pour les objets d'art et architecture (PID: `aat`)
+* <img src='https://raw.githubusercontent.com/zoometh/thomashuet/master/img/lod-iso-edtf.png' style='height: 50px;vertical-align: middle;'>[^2]: pour des dates _fuzzy_ ou très précises (_timestamped_)
+
+[^2]: ISO 8601-2:2019
+
+::: {.notes}
+pour faciliter l'intéropérabilité de ses données
+:::
+
+
+### Technologies
+
+Technologies matures et open-source :
+
+* <img src='https://raw.githubusercontent.com/zoometh/thomashuet/master/img/app-os-linux-ubuntu-1.png' style='height: 40px;vertical-align: middle;'> : OS[^4] de la plupart des serveurs web. 
+* <img src='https://raw.githubusercontent.com/zoometh/thomashuet/master/img/app-bd-postgres-2.png' style='height: 40px;vertical-align: middle;'> : SGBD[^3] open-source proche d'Oracle.
+* <img src='https://raw.githubusercontent.com/zoometh/thomashuet/master/img/app-prg-python.png' style='height: 40px;vertical-align: middle;'> : langage de programmation le plus utilisé au monde.
+* <img src='https://raw.githubusercontent.com/zoometh/thomashuet/master/img/web-api-2.png' style='height: 40px;vertical-align: middle;'> : standard d'interface de programmation d'applications sur le web.
+
+[^4]: _Operating System_, système d'exploitation
+[^3]: Système de Gestion de Bases de Données
+
+::: {.notes}
+pour garantir la maintenance des données sur le long terme
+:::
+
+### CHIPS et CHIPS dev
+
+:::: {.columns}
+
+* `CHIPS`: accès et ouverture sur le web limités
+* `CHIPS dev`: clone de CHIPS ouverte sur le web (_dashboard_)
+
+::: {.column width="35%"}
+
+<center>
+
+`CHIPS`
+
+<img src='https://raw.githubusercontent.com/zoometh/thomashuet/master/img/bd--generic.png' style='height: 70px;vertical-align: middle;'>
+
+<b><span style="color:black">C <span style="color:lightgrey">R</span> U D</span></b>
+
+<!-- <small> _host_ <img src='https://raw.githubusercontent.com/zoometh/thomashuet/master/img/inst-humanum-2.png' style='height: 30px;vertical-align: middle;'> </small> -->
+<img src='https://raw.githubusercontent.com/zoometh/thomashuet/master/img/inst-humanum-2.png' style='height: 35px;vertical-align: middle;'>
+
+</center>
+
+:::
+
+::: {.column width="30%"}
+
+<center>
+
+<br>
+🠮 🠮 🠮<br>
+`copy data only`<br>
+🠮 🠮 🠮
+
+</center>
+
+:::
+
+::: {.column width="35%"}
+
+<center>
+
+`CHIPS dev`
+
+<img src='https://raw.githubusercontent.com/zoometh/thomashuet/master/img/bd--generic.png' style='height: 70px;vertical-align: middle;'>
+
+<b><span style="color:lightgrey">C <span style="color:black">R</span> U D</span></b>
+
+<!-- <small> _host_ <img src='https://raw.githubusercontent.com/zoometh/thomashuet/master/img/inst-upsac-mesocentre.png' style='height: 40px;vertical-align: middle;'> </small> -->
+<img src='https://raw.githubusercontent.com/zoometh/thomashuet/master/img/inst-upsac-mesocentre.png' style='height: 35px;vertical-align: middle;'>
+
+</center>
+
+:::
+
+::::
+
+:::
+
+
+# Intéropérabilité et Réusabilité
+
+
+## Plateforme GEO
+
+```{=html}
+<center>
+<iframe width="1000" height="500" src="https://fnp.huma-num.fr/adws/app/efbc5983-40d6-11ec-810c-a7f8dd92e681/index.html" title="Quarto Documentation"></iframe>
+</center>
+```
+
+## Dashboard <img src='https://raw.githubusercontent.com/zoometh/thomashuet/master/img/app-prg-python.png' style='height: 60px;vertical-align: middle;'> (1/2)
+
+::: {.panel-tabset}
+
+### Objectif
+
+
+
+:::: {.columns}
+
+
+::: {.column width="70%"}
+
+Offir une vue synthétique du contenu de la BDD CHIPS ; faciliter l'identification, l'accès, l'intéropérabilité et la réutilisation des données 
+\
+\
+Créer du code modulaire pour sa réutilisabilité (_code as data_)
+\
+\
+
+:::
+
+::: {.column width="30%"}
+
+<center>
+
+
+<img src='https://raw.githubusercontent.com/zoometh/thomashuet/master/img/lod-data-fair-1.png' style='width: 350px;vertical-align: middle;'>
+
+</center>
+
+:::
+
+::::
+
+### _Datasets_
+
+
+:::: {.columns}
+
+
+::: {.column width="30%"}
+
+Indexation spatiale et par jeux de données (_datasets_)
+
+:::
+
+::: {.column width="70%"}
+
+<center>
+
+<img src='https://raw.githubusercontent.com/iramat/iramat-dev/master/img/bdd-chips-dash-mapgen.png' style='width: 750px;vertical-align: middle;'>
+
+</center>
+
+:::
+
+::::
+
+
+### Echantillons
+
+:::: {.columns}
+
+
+::: {.column width="30%"}
+
+Indexation spatiale
+
+:::
+
+::: {.column width="70%"}
+
+<center>
+
+<img src='https://raw.githubusercontent.com/iramat/iramat-dev/master/img/bdd-chips-dash-map-dataset.png' style='width: 750px;vertical-align: middle;'>
+
+</center>
+
+:::
+
+::::
+
+
+:::
+
+## Dashboard <img src='https://raw.githubusercontent.com/zoometh/thomashuet/master/img/app-prg-python.png' style='height: 60px;vertical-align: middle;'> (2/2)
+
+::: {.panel-tabset}
+
+
+### API des échantillons 
+
+<center>
+
+<img src='https://raw.githubusercontent.com/iramat/iramat-dev/master/img/bdd-chips-dash-api.png' style='width: 900px;vertical-align: middle;'>
+
+</center>
+
+### _Live demo_
+
+```{=html}
+<iframe width="1200" height="700" src="https://iramat-apps.cnrs.fr/dash/" title="Quarto Documentation"></iframe>
+```
+
+:::
+
+## Analyses avec R <img src='https://raw.githubusercontent.com/iramat/iramat-dev/main/img/logo-iRamat.png' style='height: 50px;vertical-align: middle;'>
+
+::: {.panel-tabset}
+
+### Un _dataset_
+
+```{r, echo = TRUE}
+library(iRamat)
+
+df <- db_api_connect()
+names(df)
+```
+```{r, echo = TRUE}
+df$dataset_adisser17 %>%
+  select(-reference) %>%
+  head(10) %>%
+  kable("html") %>%
+  kable_styling(font_size = 18)
+```
+\
+\
+
+### Un _dataset_ (chronologie)
+
+```{.r}
+chrono(d = df$dataset_adisser17)
+```
+
+<img src='https://raw.githubusercontent.com/iramat/iRamat/master/doc/chrono_sites_seriated.png' style='width: 800px;vertical-align: middle;'>
+
+### Tous les _datasets_
+
+```{.r}
+df <- db_api_connect(all_datasets = TRUE)
+# all_datasets = TRUE: collecting all datasets from urls_data.tsv
+# Requesting: http://157.136.252.188:3000/dataset_tyoungxx
+# Requesting: http://157.136.252.188:3000/dataset_adisser17
+# Requesting: http://157.136.252.188:3000/dataset_gzabinski23
+# Requesting: http://157.136.252.188:3000/dataset_gpages22
+# Requesting: http://157.136.252.188:3000/dataset_vserneels93
+# Requesting: http://157.136.252.188:3000/dataset_sleroy12
+# Requesting: http://157.136.252.188:3000/dataset_pdillmann17
+# Requesting: http://157.136.252.188:3000/dataset_amdesaulty8a
+# Requesting: http://157.136.252.188:3000/dataset_amdesaulty8b
+# Requesting: http://157.136.252.188:3000/dataset_jmilot16
+# Requesting: http://157.136.252.188:3000/dataset_mpcoustures06
+# Requesting: http://157.136.252.188:3000/dataset_gstdidier17
+# Requesting: http://157.136.252.188:3000/dataset_mbrauns13
+# Requesting: http://157.136.252.188:3000/dataset_lheritier20
+# Requesting: http://157.136.252.188:3000/dataset_mleroy97
+# Requesting: http://157.136.252.188:3000/dataset_mleroy24
+# Requesting: http://157.136.252.188:3000/dataset_leschenlohr01
+# Requesting: http://157.136.252.188:3000/dataset_tivancan21
+# Requesting: http://157.136.252.188:3000/dataset_pmameli14
+# Requesting: http://157.136.252.188:3000/dataset_kmittelstaedt22
+# Requesting: http://157.136.252.188:3000/dataset_mbenvenuti13
+# Collected and merged 21 datasets. Total rows: 3225
+```
+
+\
+\
+\
+
+
+:::
+
+
+## Perspectives
+
+Prochaines étapes du développement de la BDD CHIPS <img src='https://raw.githubusercontent.com/iramat/iramat-dev/main/img/logo-chips-round.png' style='height: 60px;vertical-align: middle;'>:
+
+* Dashboard <img src='https://raw.githubusercontent.com/zoometh/thomashuet/master/img/app-prg-python.png' style='height: 50px;vertical-align: middle;'>: amélioration de l'interface, nouveaux outils de visualisation, de sélection et d'export ;
+* un _data pipeline_ entre l'API des _datasets_ et <img src='https://raw.githubusercontent.com/zoometh/thomashuet/master/img/app-zenodo.png' style='height: 40px;vertical-align: middle;'> pour un dépôt standardisé et semi-automatique ;
+* nouvelles fonctions <img src='https://raw.githubusercontent.com/zoometh/thomashuet/master/img/prog-r-1.png' style='height: 45px;vertical-align: middle;'> ( _package_ <img src='https://raw.githubusercontent.com/iramat/iRamat/master/doc/img/logo.png' style='height: 60px;vertical-align: middle;'> ) ;
+* interface graphique utilisateur (GUI) avec <img src='https://raw.githubusercontent.com/zoometh/thomashuet/master/img/app-pao-qt.png' style='height: 50px;vertical-align: middle;'> pour la saisie des données.
+
+
+# Discussion {background-image="https://raw.githubusercontent.com/zoometh/thomashuet/master/img/r-pkg--repo-public-github.png" background-opacity=0.3 background-size="800px" background-repeat="repeat"}
+
+* Site web:     <https://iramat.github.io/chips>
+* GitHub:       <https://github.com/iramat/chips>
+* GEO platform: <https://fnp.huma-num.fr/aws/app/b652928b-ee00-11ef-a2bf-831c0bd9b87e/index.html>
