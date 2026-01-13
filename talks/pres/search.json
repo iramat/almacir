@@ -4,7 +4,7 @@
     "href": "index.html#numishare",
     "title": "ALMACIR",
     "section": "Numishare",
-    "text": "Numishare\n\nPrésentationHistoriqueMCD\n\n\n\n\nSuite d’applications open source pour la gestion des collections numismatiques. Normes et pratiques communes des bibliothèques/archives/musées pour la durabilité et l’interopérabilité des données.\n\n\n\n\n\nCollection numismatique du Musée d’art de l’Université de Virginie hébergé par le Scholars’ Lab. Le projet a débuté à l’automne 2007 et le code a été rendu open source à l’été 2009. Développé et maintenu par l’ ANS1 et utilisé pour sa collection en ligne\n\n\n\n\n\n\n\nflowchart TB\n    Browser[\"🌐 Web Browser&lt;br/&gt;(User / Admin / API)\"]\n    subgraph Numishare stack\n        Tomcat[\"🧱 Apache Tomcat 9&lt;br/&gt;Port 8080\"]\n        Orbeon[\"📄 Orbeon Forms CE&lt;br/&gt;Context: /orbeon\"]\n        Numishare[\"🪙 Numishare App&lt;br/&gt;/orbeon/numishare\"]\n        Exist[\"🗄️ eXist-db&lt;br/&gt;Port 8888&lt;br/&gt;NUDS / RDF / Config\"]\n        Solr[\"🔍 Apache Solr&lt;br/&gt;Port 8983&lt;br/&gt;Core: numishare\"]\n        Cantaloupe[\"🖼️ Cantaloupe IIIF&lt;br/&gt;Base: /iiif/2/\"]\n        Images[\"💾 Image Storage&lt;br/&gt;/home/ubuntu/data/numishare/images\"]\n    end\n\n    Browser --&gt;|HTTP/S| Tomcat\n    Tomcat --&gt; Orbeon\n    Orbeon --&gt; Numishare\n    Numishare --&gt; Exist\n    Numishare --&gt; Solr\n    Numishare --&gt; Cantaloupe\n    Cantaloupe --&gt; Images"
+    "text": "Numishare\n\nPrésentationHistoriqueProjetsMCD\n\n\n\n\nSuite d’applications open source pour la gestion des collections numismatiques. Normes (NUDS)1 pratiques communes des bibliothèques/archives/musées pour la durabilité et l’interopérabilité des données.\n\n\n\n\n\nCollection numismatique du Musée d’art de l’Université de Virginie hébergé par le Scholars’ Lab. Le projet a débuté à l’automne 2007 et le code a été rendu open source à l’été 2009. Développé et maintenu par l’ ANS2 et utilisé pour sa collection en ligne\n\n\n\n\n\n\n\n\n\n\nflowchart TB\n    Browser[\"🌐 Web Browser (User / Admin / API)\"]\n    \n    subgraph Numishare_stack [\"Numishare stack\"]\n        Tomcat[\"🧱 Apache Tomcat 9 Port 8080\"]\n        Orbeon[\"📄 Orbeon Forms CE Context: /orbeon\"]\n        Numishare[\"🪙 Numishare App /orbeon/numishare\"]\n        Exist[\"🗄️ eXist-db Port 8888 NUDS / RDF / Config\"]\n        Solr[\"🔍 Apache Solr Port 8983 Core: numishare\"]\n        Cantaloupe[\"🖼️ Cantaloupe IIIF Base: /iiif/2/\"]\n        Images[\"💾 Image Storage /home/ubuntu/data/numishare/images\"]\n    end\n    \n    style Numishare_stack fill:#f9f9f9,stroke:#333,stroke-width:2px,stroke-dasharray: 5 5\n\n    Browser --&gt;|HTTP/S| Tomcat\n    Tomcat --&gt; Orbeon\n    Orbeon --&gt; Numishare\n    Numishare --&gt; Exist\n    Numishare --&gt; Solr\n    Numishare --&gt; Cantaloupe\n    Cantaloupe --&gt; Images"
   },
   {
     "objectID": "index.html#almacir-sur-numishare",
@@ -46,7 +46,7 @@
     "href": "index.html#almacir-sur-github",
     "title": "ALMACIR",
     "section": "ALMACIR sur GitHub",
-    "text": "ALMACIR sur GitHub\n\nRepo publicRepo privé\n\n\n\n\nhttps://github.com/iramat/almacir ( = branche main2): Données publiques: données de référence, images, présentations, code informatique (non R), etc.\n\n\n\n\n\n\n\nhttps://github.com/iramat/almacir-private ( main uniquement)"
+    "text": "ALMACIR sur GitHub\n\nRepo publicRepo privé\n\n\n\n\nhttps://github.com/iramat/almacir ( = branche main3): Données publiques: données de référence, images, présentations, code informatique (non R), etc.\n\n\n\n\n\n\n\nhttps://github.com/iramat/almacir-private (main uniquement)"
   },
   {
     "objectID": "index.html#todo-2",
@@ -60,14 +60,14 @@
     "href": "index.html#zenodo---généralités",
     "title": "ALMACIR",
     "section": "Zenodo - Généralités",
-    "text": "Zenodo - Généralités\nEntrepot de données (self-archiving), fournisseur de DOI intégrant le protocole OAI-PMH3, des API (Python, GitHub, etc),"
+    "text": "Zenodo - Généralités\nEntrepot de données (self-archiving), fournisseur de DOI intégrant le protocole OAI-PMH4, des API (Python, GitHub, etc),"
   },
   {
     "objectID": "index.html#zenodo---historique",
     "href": "index.html#zenodo---historique",
     "title": "ALMACIR",
     "section": "Zenodo - historique",
-    "text": "Zenodo - historique\nCréé et hébergé au CERN4, dans le cadre d’ OpenAIRE5, sauvegarde des données sur le Data Center du CERN"
+    "text": "Zenodo - historique\nCréé et hébergé au CERN5, dans le cadre d’ OpenAIRE6, sauvegarde des données sur le Data Center du CERN"
   },
   {
     "objectID": "index.html#almacir-sur-zenodo",
@@ -109,6 +109,6 @@
     "href": "index.html#footnotes",
     "title": "ALMACIR",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nAmerican Numismatic Society\nAutres branches: hugo-files et gh-pages: génération du site web Hugo; dev: développement informatique\nOpen Archives Initiative Protocol for Metadata Harvesting\nCentre Européen pour la Recherche Nucléaire\nnutshell européenne pour la Science Ouverte"
+    "text": "Footnotes\n\n\nNUmismatic Description Standard XML\nAmerican Numismatic Society\nAutres branches: hugo-files et gh-pages: génération du site web Hugo; dev: développement informatique\nOpen Archives Initiative Protocol for Metadata Harvesting\nCentre Européen pour la Recherche Nucléaire\nnutshell européenne pour la Science Ouverte"
   }
 ]

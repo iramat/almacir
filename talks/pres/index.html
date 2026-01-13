@@ -158,36 +158,42 @@ Thomas Huet
 <section id="numishare" class="slide level2">
 <h2>Numishare</h2>
 <div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Présentation</a></li><li><a href="#tabset-1-2">Historique</a></li><li><a href="#tabset-1-3">MCD</a></li></ul>
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Présentation</a></li><li><a href="#tabset-1-2">Historique</a></li><li><a href="#tabset-1-3">Projets</a></li><li><a href="#tabset-1-4">MCD</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
 <div class="columns">
 <div class="column" style="width:50%;">
-<p>Suite d’applications <em>open source</em> pour la gestion des collections numismatiques. Normes et pratiques communes des bibliothèques/archives/musées pour la durabilité et l’interopérabilité des données.</p>
+<p>Suite d’applications <em>open source</em> pour la gestion des collections numismatiques. Normes (NUDS)<a href="#/footnotes" class="footnote-ref" id="fnref1" role="doc-noteref" data-footnote-href="#/fn1" onclick=""><sup>1</sup></a> pratiques communes des bibliothèques/archives/musées pour la durabilité et l’interopérabilité des données.</p>
 </div><div class="column" style="width:50%;">
 <p><img src="https://raw.githubusercontent.com/iramat/chips/master/img/db_erd.png" style="width: 750px;vertical-align: middle;"></p>
 </div></div>
 </div>
 <div id="tabset-1-2">
-<p>Collection numismatique du Musée d’art de l’Université de Virginie hébergé par le Scholars’ Lab. Le projet a débuté à l’automne 2007 et le code a été rendu <em>open source</em> à l’été 2009. Développé et maintenu par l’ ANS<a href="#/footnotes" class="footnote-ref" id="fnref1" role="doc-noteref" data-footnote-href="#/fn1" onclick=""><sup>1</sup></a> et utilisé pour sa collection en ligne</p>
+<p>Collection numismatique du Musée d’art de l’Université de Virginie hébergé par le Scholars’ Lab. Le projet a débuté à l’automne 2007 et le code a été rendu <em>open source</em> à l’été 2009. Développé et maintenu par l’ ANS<a href="#/footnotes" class="footnote-ref" id="fnref2" role="doc-noteref" data-footnote-href="#/fn2" onclick=""><sup>2</sup></a> et utilisé pour sa collection en ligne</p>
 </div>
 <div id="tabset-1-3">
+<iframe width="1200" height="450" src="https://numismatics.org/resources/" title="Nomisma projects"></iframe>
+</div>
+<div id="tabset-1-4">
 <div class="cell" data-reveal="true" data-layout-align="default">
 <div class="cell-output-display">
 <div>
 <p></p><figure class=""><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart TB
-    Browser["🌐 Web Browser&lt;br/&gt;(User / Admin / API)"]
-    subgraph Numishare stack
-        Tomcat["🧱 Apache Tomcat 9&lt;br/&gt;Port 8080"]
-        Orbeon["📄 Orbeon Forms CE&lt;br/&gt;Context: /orbeon"]
-        Numishare["🪙 Numishare App&lt;br/&gt;/orbeon/numishare"]
-        Exist["🗄️ eXist-db&lt;br/&gt;Port 8888&lt;br/&gt;NUDS / RDF / Config"]
-        Solr["🔍 Apache Solr&lt;br/&gt;Port 8983&lt;br/&gt;Core: numishare"]
-        Cantaloupe["🖼️ Cantaloupe IIIF&lt;br/&gt;Base: /iiif/2/"]
-        Images["💾 Image Storage&lt;br/&gt;/home/ubuntu/data/numishare/images"]
+    Browser["🌐 Web Browser (User / Admin / API)"]
+    
+    subgraph Numishare_stack ["Numishare stack"]
+        Tomcat["🧱 Apache Tomcat 9 Port 8080"]
+        Orbeon["📄 Orbeon Forms CE Context: /orbeon"]
+        Numishare["🪙 Numishare App /orbeon/numishare"]
+        Exist["🗄️ eXist-db Port 8888 NUDS / RDF / Config"]
+        Solr["🔍 Apache Solr Port 8983 Core: numishare"]
+        Cantaloupe["🖼️ Cantaloupe IIIF Base: /iiif/2/"]
+        Images["💾 Image Storage /home/ubuntu/data/numishare/images"]
     end
+    
+    style Numishare_stack fill:#f9f9f9,stroke:#333,stroke-width:2px,stroke-dasharray: 5 5
 
     Browser --&gt;|HTTP/S| Tomcat
     Tomcat --&gt; Orbeon
@@ -289,7 +295,7 @@ Thomas Huet
 <div id="tabset-2-1">
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><a href="https://github.com/iramat/almacir" class="uri">https://github.com/iramat/almacir</a> ( = branche <a href="https://github.com/iramat/almacir/tree/main">main</a><a href="#/footnotes" class="footnote-ref" id="fnref2" role="doc-noteref" data-footnote-href="#/fn2" onclick=""><sup>2</sup></a>): Données publiques: données de référence, images, présentations, code informatique (non R), etc.</p>
+<p><a href="https://github.com/iramat/almacir" class="uri">https://github.com/iramat/almacir</a> ( = branche <a href="https://github.com/iramat/almacir/tree/main">main</a><a href="#/footnotes" class="footnote-ref" id="fnref3" role="doc-noteref" data-footnote-href="#/fn3" onclick=""><sup>3</sup></a>): Données publiques: données de référence, images, présentations, code informatique (non R), etc.</p>
 </div><div class="column" style="width:50%;">
 <p><br></p>
 <p><img src="https://raw.githubusercontent.com/iramat/almacir/master/img/app-github-almacir-data-public.png" style="width: 750px;vertical-align: middle;"></p>
@@ -297,7 +303,7 @@ Thomas Huet
 </div>
 <div id="tabset-2-2">
 <div class="column" style="width:50%;">
-<p><a href="https://github.com/iramat/almacir-private" class="uri">https://github.com/iramat/almacir-private</a> ( <a href="https://github.com/iramat/almacir-private/tree/main">main</a> uniquement)</p>
+<p><a href="https://github.com/iramat/almacir-private" class="uri">https://github.com/iramat/almacir-private</a> (<a href="https://github.com/iramat/almacir-private/tree/main">main</a> uniquement)</p>
 </div><div class="column" style="width:50%;">
 <p><br></p>
 <p><img src="https://raw.githubusercontent.com/iramat/almacir/master/img/app-github-almacir-issue-private.png" style="width: 750px;vertical-align: middle;"></p>
@@ -318,11 +324,11 @@ Thomas Huet
 </section>
 <section id="zenodo---généralités" class="slide level2">
 <h2>Zenodo - Généralités</h2>
-<p>Entrepot de données (<em>self-archiving</em>), fournisseur de DOI intégrant le protocole OAI-PMH<a href="#/footnotes" class="footnote-ref" id="fnref3" role="doc-noteref" data-footnote-href="#/fn3" onclick=""><sup>3</sup></a>, des API (Python, GitHub, etc),</p>
+<p>Entrepot de données (<em>self-archiving</em>), fournisseur de DOI intégrant le protocole OAI-PMH<a href="#/footnotes" class="footnote-ref" id="fnref4" role="doc-noteref" data-footnote-href="#/fn4" onclick=""><sup>4</sup></a>, des API (Python, GitHub, etc),</p>
 <aside></aside></section>
 <section id="zenodo---historique" class="slide level2">
 <h2>Zenodo - historique</h2>
-<p>Créé et hébergé au CERN<a href="#/footnotes" class="footnote-ref" id="fnref4" role="doc-noteref" data-footnote-href="#/fn4" onclick=""><sup>4</sup></a>, dans le cadre d’ OpenAIRE<a href="#/footnotes" class="footnote-ref" id="fnref5" role="doc-noteref" data-footnote-href="#/fn5" onclick=""><sup>5</sup></a>, sauvegarde des données sur le <em>Data Center</em> du CERN</p>
+<p>Créé et hébergé au CERN<a href="#/footnotes" class="footnote-ref" id="fnref5" role="doc-noteref" data-footnote-href="#/fn5" onclick=""><sup>5</sup></a>, dans le cadre d’ OpenAIRE<a href="#/footnotes" class="footnote-ref" id="fnref6" role="doc-noteref" data-footnote-href="#/fn6" onclick=""><sup>6</sup></a>, sauvegarde des données sur le <em>Data Center</em> du CERN</p>
 <aside></aside></section>
 <section id="almacir-sur-zenodo" class="slide level2">
 <h2>ALMACIR sur Zenodo</h2>
@@ -389,11 +395,12 @@ Thomas Huet
 <section id="footnotes" class="footnotes footnotes-end-of-document smaller scrollable" role="doc-endnotes"><h2>Footnotes</h2>
 
 <ol>
-<li id="fn1"><p><em>American Numismatic Society</em></p></li>
-<li id="fn2"><p>Autres branches: <a href="https://github.com/iramat/almacir/tree/hugo-files">hugo-files</a> et <a href="https://github.com/iramat/almacir/tree/gh-pages">gh-pages</a>: génération du site web Hugo; <a href="https://github.com/iramat/almacir/tree/dev">dev</a>: développement informatique</p></li>
-<li id="fn3"><p><em>Open Archives Initiative Protocol for Metadata Harvesting</em></p></li>
-<li id="fn4"><p>Centre Européen pour la Recherche Nucléaire</p></li>
-<li id="fn5"><p><em>nutshell</em> européenne pour la Science Ouverte</p></li>
+<li id="fn1"><p><em>NUmismatic Description Standard</em> XML</p></li>
+<li id="fn2"><p><em>American Numismatic Society</em></p></li>
+<li id="fn3"><p>Autres branches: <a href="https://github.com/iramat/almacir/tree/hugo-files">hugo-files</a> et <a href="https://github.com/iramat/almacir/tree/gh-pages">gh-pages</a>: génération du site web Hugo; <a href="https://github.com/iramat/almacir/tree/dev">dev</a>: développement informatique</p></li>
+<li id="fn4"><p><em>Open Archives Initiative Protocol for Metadata Harvesting</em></p></li>
+<li id="fn5"><p>Centre Européen pour la Recherche Nucléaire</p></li>
+<li id="fn6"><p><em>nutshell</em> européenne pour la Science Ouverte</p></li>
 </ol>
 </section>
     </div>

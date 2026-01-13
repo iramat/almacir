@@ -51,7 +51,7 @@ library(kableExtra)
 :::: {.columns}
 
 ::: {.column width="50%"}
-Suite d'applications _open source_ pour la gestion des collections numismatiques. Normes et pratiques communes des bibliothèques/archives/musées pour la durabilité et l'interopérabilité des données.
+Suite d'applications _open source_ pour la gestion des collections numismatiques. Normes (NUDS)[^7] pratiques communes des bibliothèques/archives/musées pour la durabilité et l'interopérabilité des données.
 :::
 
 ::: {.column width="50%"}
@@ -62,26 +62,38 @@ Suite d'applications _open source_ pour la gestion des collections numismatiques
 
 ::::
 
+[^7]: _NUmismatic Description Standard_ XML
+
 ### Historique
 
 Collection numismatique du Musée d'art de l'Université de Virginie hébergé par le Scholars' Lab. Le projet a débuté à l'automne 2007 et le code a été rendu _open source_ à l'été 2009. Développé et maintenu par l' ANS[^1] et utilisé pour sa collection en ligne
 
 [^1]: _American Numismatic Society_
 
+### Projets
+
+```{=html}
+<iframe width="1200" height="450" src="https://numismatics.org/resources/" title="Nomisma projects"></iframe>
+```
+
+
 ### MCD
 
 ```{mermaid}
 flowchart TB
-    Browser["🌐 Web Browser<br/>(User / Admin / API)"]
-    subgraph Numishare stack
-        Tomcat["🧱 Apache Tomcat 9<br/>Port 8080"]
-        Orbeon["📄 Orbeon Forms CE<br/>Context: /orbeon"]
-        Numishare["🪙 Numishare App<br/>/orbeon/numishare"]
-        Exist["🗄️ eXist-db<br/>Port 8888<br/>NUDS / RDF / Config"]
-        Solr["🔍 Apache Solr<br/>Port 8983<br/>Core: numishare"]
-        Cantaloupe["🖼️ Cantaloupe IIIF<br/>Base: /iiif/2/"]
-        Images["💾 Image Storage<br/>/home/ubuntu/data/numishare/images"]
+    Browser["🌐 Web Browser (User / Admin / API)"]
+    
+    subgraph Numishare_stack ["Numishare stack"]
+        Tomcat["🧱 Apache Tomcat 9 Port 8080"]
+        Orbeon["📄 Orbeon Forms CE Context: /orbeon"]
+        Numishare["🪙 Numishare App /orbeon/numishare"]
+        Exist["🗄️ eXist-db Port 8888 NUDS / RDF / Config"]
+        Solr["🔍 Apache Solr Port 8983 Core: numishare"]
+        Cantaloupe["🖼️ Cantaloupe IIIF Base: /iiif/2/"]
+        Images["💾 Image Storage /home/ubuntu/data/numishare/images"]
     end
+    
+    style Numishare_stack fill:#f9f9f9,stroke:#333,stroke-width:2px,stroke-dasharray: 5 5
 
     Browser -->|HTTP/S| Tomcat
     Tomcat --> Orbeon
