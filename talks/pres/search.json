@@ -1,114 +1,121 @@
 [
   {
+    "objectID": "index.html#plan",
+    "href": "index.html#plan",
+    "title": "ANR ALMACIR",
+    "section": "Plan",
+    "text": "Plan\n\nNumishare\nLangage R\nGitHub\nZenodo\nsite web"
+  },
+  {
     "objectID": "index.html#numishare",
     "href": "index.html#numishare",
-    "title": "ALMACIR",
+    "title": "ANR ALMACIR",
     "section": "Numishare",
-    "text": "Numishare\n\nPrésentationHistoriqueProjetsMCD\n\n\n\n\nSuite d’applications open source pour la gestion des collections numismatiques. Normes (NUDS)1 pratiques communes des bibliothèques/archives/musées pour la durabilité et l’interopérabilité des données.\n\n\n\n\n\nCollection numismatique du Musée d’art de l’Université de Virginie hébergé par le Scholars’ Lab. Le projet a débuté à l’automne 2007 et le code a été rendu open source à l’été 2009. Développé et maintenu par l’ ANS2 et utilisé pour sa collection en ligne\n\n\n\n\n\n\n\n\n\n\nflowchart TB\n    Browser[\"🌐 Web Browser (User / Admin / API)\"]\n    \n    subgraph Numishare_stack [\"Numishare stack\"]\n        Tomcat[\"🧱 Apache Tomcat 9 Port 8080\"]\n        Orbeon[\"📄 Orbeon Forms CE Context: /orbeon\"]\n        Numishare[\"🪙 Numishare App /orbeon/numishare\"]\n        Exist[\"🗄️ eXist-db Port 8888 NUDS / RDF / Config\"]\n        Solr[\"🔍 Apache Solr Port 8983 Core: numishare\"]\n        Cantaloupe[\"🖼️ Cantaloupe IIIF Base: /iiif/2/\"]\n        Images[\"💾 Image Storage /home/ubuntu/data/numishare/images\"]\n    end\n    \n    style Numishare_stack fill:#f9f9f9,stroke:#333,stroke-width:2px,stroke-dasharray: 5 5\n\n    Browser --&gt;|HTTP/S| Tomcat\n    Tomcat --&gt; Orbeon\n    Orbeon --&gt; Numishare\n    Numishare --&gt; Exist\n    Numishare --&gt; Solr\n    Numishare --&gt; Cantaloupe\n    Cantaloupe --&gt; Images"
+    "text": "Numishare\n\nPrésentationHistoriqueBase de données/ProjetsMCD\n\n\n\n\nSuite d’applications open source1 pour la gestion des collections numismatiques. Normes (NUDS)2 pratiques communes des bibliothèques/archives/musées pour la durabilité et l’interopérabilité des données. Nativement alignée sur Nomisma.org3\n\n\n\n\n\nCollection numismatique du Musée d’art de l’Université de Virginie hébergé par le Scholars’ Lab. Le projet a débuté à l’automne 2007 et le code a été rendu open source à l’été 2009. Développé et maintenu par l’ ANS4 et utilisé pour sa collection en ligne\n\n\n\n\n\n\n\n\n\n\nflowchart TB\n    Browser[\"Web Browser\"]\n    \n    subgraph Numishare_stack [\"Numishare stack\"]\n        Tomcat[\"Apache Tomcat 9\"]\n        Orbeon[\"Orbeon Forms CE\"]\n        Numishare[\"Numishare App\"]\n        Exist[\"eXist-db\"]\n        Solr[\"Apache Solr\"]\n        Cantaloupe[\"Cantaloupe IIIF\"]\n        Images[\"Image Storage\"]\n    end\n    \n    style Numishare_stack fill:#f9f9f9,stroke:#333,stroke-width:2px,stroke-dasharray: 5 5\n\n    Browser --&gt;|HTTP/S| Tomcat\n    Tomcat --&gt; Orbeon\n    Orbeon --&gt; Numishare\n    Numishare --&gt; Exist\n    Numishare --&gt; Solr\n    Numishare --&gt; Cantaloupe\n    Cantaloupe --&gt; Images"
   },
   {
     "objectID": "index.html#almacir-sur-numishare",
     "href": "index.html#almacir-sur-numishare",
-    "title": "ALMACIR",
+    "title": "ANR ALMACIR",
     "section": "ALMACIR sur Numishare",
-    "text": "ALMACIR sur Numishare\n\nNumishare est déployé et opérationnel en mode admin.\n\n\n\n\nApplications\nURLs\n\n\n\n\nTomcat\nhttp://157.136.252.188:8080\n\n\nOrbeon\nhttp://157.136.252.188:8080/orbeon/\n\n\nNumishare\nhttp://157.136.252.188:8080/orbeon/numishare/"
+    "text": "ALMACIR sur Numishare\nNumishare est déployé et opérationnel en mode admin.\n\n\n\nApplications\nURLs\n\n\n\n\nTomcat\nhttp://157.136.252.188:8080\n\n\nOrbeon\nhttp://157.136.252.188:8080/orbeon/\n\n\nNumishare\nhttp://157.136.252.188:8080/orbeon/numishare/\n\n\n\n\n🪙 demo.0003: http://157.136.252.188:8080/orbeon/numishare/demo/id/demo.0003"
   },
   {
     "objectID": "index.html#todo",
     "href": "index.html#todo",
-    "title": "ALMACIR",
+    "title": "ANR ALMACIR",
     "section": "⏳ TODO",
-    "text": "⏳ TODO\n\nAlimenter les données, activer Solr, et finaliser l’exposition publique (production)\nhttp://157.136.252.188 (HTTP) -&gt; https://iramat-apps.cnrs.fr/ (HTTPS)"
+    "text": "⏳ TODO\n\nDévelopper la fiche descriptive (nomisma concepts + nouveaux concepts)\nDévelopper un flux de création et d’édition des données\nAlimenter les données\nFinaliser l’exposition publique (production): http://157.136.252.188 (HTTP) -&gt; https://iramat-apps.cnrs.fr/ (HTTPS)"
   },
   {
-    "objectID": "index.html#package-iramat",
-    "href": "index.html#package-iramat",
-    "title": "ALMACIR",
-    "section": "package iRamat",
-    "text": "package iRamat\n\n\nWIAI: - Présentation du package R iRamat - support | video - Mardi 7 octobre 2025, 10:00 - 10:50"
+    "objectID": "index.html#package-iramat-pour-les-analyses",
+    "href": "index.html#package-iramat-pour-les-analyses",
+    "title": "ANR ALMACIR",
+    "section": "package iRamat pour les analyses",
+    "text": "package iRamat pour les analyses\n\n\n🧮 WIAI\n\nWIAI, Webinaires de l’Informatique pour l’Archéologie à l’IRAMAT\n\n\n\n\n\n\n\n\nNote\n\n\nPrésentation du package R iRamat - support | video - Mardi 7 octobre 2025, 10:00 - 10:50"
   },
   {
     "objectID": "index.html#todo-1",
     "href": "index.html#todo-1",
-    "title": "ALMACIR",
+    "title": "ANR ALMACIR",
     "section": "⏳ TODO",
-    "text": "⏳ TODO\n\n\n\nMutualisation et mise en fonction documentées des scripts R “tapés au km”\nfonctions spécifiques pour la numismatique"
+    "text": "⏳ TODO\n\n\n\nMutualisation et mise en fonction documentées des scripts R “tapés au km”\nDeveloppement de fonctions spécifiques pour la numismatique"
   },
   {
     "objectID": "index.html#github---généralités",
     "href": "index.html#github---généralités",
-    "title": "ALMACIR",
+    "title": "ANR ALMACIR",
     "section": "GitHub - Généralités",
-    "text": "GitHub - Généralités\n\n\nWIAI: Présentation de GitHub - support | video- Mardi 8 juillet 2025, 10:00 - 10:50"
+    "text": "GitHub - Généralités\n\n\n🧮 WIAI\n\nWIAI, Webinaires de l’Informatique pour l’Archéologie à l’IRAMAT\n\n\n\n\n\n\n\n\nNote\n\n\nPrésentation de GitHub - support | video- Mardi 8 juillet 2025, 10:00 - 10:50"
   },
   {
     "objectID": "index.html#almacir-sur-github",
     "href": "index.html#almacir-sur-github",
-    "title": "ALMACIR",
+    "title": "ANR ALMACIR",
     "section": "ALMACIR sur GitHub",
-    "text": "ALMACIR sur GitHub\n\nRepo publicRepo privé\n\n\n\n\nhttps://github.com/iramat/almacir ( = branche main3): Données publiques: données de référence, images, présentations, code informatique (non R), etc.\n\n\n\n\n\n\n\nhttps://github.com/iramat/almacir-private (main uniquement)"
+    "text": "ALMACIR sur GitHub\n\nRepo publicRepo privé\n\n\n\n\nhttps://github.com/iramat/almacir ( = branche main5): Données publiques: données de référence, images, présentations, code informatique (non R), etc.\n\n\n\n\n\n\n\nhttps://github.com/iramat/almacir-private (main uniquement)"
   },
   {
     "objectID": "index.html#todo-2",
     "href": "index.html#todo-2",
-    "title": "ALMACIR",
+    "title": "ANR ALMACIR",
     "section": "⏳ TODO",
-    "text": "⏳ TODO\n\ninscription sur GitHub"
+    "text": "⏳ TODO\n\ninscription sur GitHub (ici)\nenvoyez-moi votre nom d’utilisateur (username) ex: @SebastienGsc\nvalider l’invitation que je vous enverrai (repos almacir et almacir-private)\ncontribuer aux discussions (👋 Issues)"
   },
   {
-    "objectID": "index.html#zenodo---généralités",
-    "href": "index.html#zenodo---généralités",
-    "title": "ALMACIR",
-    "section": "Zenodo - Généralités",
-    "text": "Zenodo - Généralités\nEntrepot de données (self-archiving), fournisseur de DOI intégrant le protocole OAI-PMH4, des API (Python, GitHub, etc),"
-  },
-  {
-    "objectID": "index.html#zenodo---historique",
-    "href": "index.html#zenodo---historique",
-    "title": "ALMACIR",
-    "section": "Zenodo - historique",
-    "text": "Zenodo - historique\nCréé et hébergé au CERN5, dans le cadre d’ OpenAIRE6, sauvegarde des données sur le Data Center du CERN"
+    "objectID": "index.html#généralités",
+    "href": "index.html#généralités",
+    "title": "ANR ALMACIR",
+    "section": "Généralités",
+    "text": "Généralités\nEntrepot de données (self-archiving), fournisseur de DOI intégrant le protocole OAI-PMH6, des API (Python, GitHub, etc).\nCréé dans le cadre d’ OpenAIRE7 et hébergé au CERN8, sauvegarde des données sur le Data Center du CERN (Gratuit pour le dépôt jusqu’à 50 GB)"
   },
   {
     "objectID": "index.html#almacir-sur-zenodo",
     "href": "index.html#almacir-sur-zenodo",
-    "title": "ALMACIR",
+    "title": "ANR ALMACIR",
     "section": "ALMACIR sur Zenodo",
-    "text": "ALMACIR sur Zenodo\n\nCommunauté “IRAMAT”Données\n\n\nhttps://zenodo.org/communities/iramat/\n\n\n\n\nfiltrer les données ALMACIR avec https://zenodo.org/communities/iramat/records?q=&f=subject%3ANumismatics&l=list&p=1&s=10&sort=newest"
+    "text": "ALMACIR sur Zenodo\n\nCommunauté “IRAMAT”DonnéesDonnées numismatiques\n\n\nhttps://zenodo.org/communities/iramat/\n\n\n\n\n\n\nfiltrer les données ALMACIR avec https://zenodo.org/communities/iramat/records?q=&f=subject%3ANumismatics&l=list&p=1&s=10&sort=newest"
   },
   {
     "objectID": "index.html#todo-3",
     "href": "index.html#todo-3",
-    "title": "ALMACIR",
+    "title": "ANR ALMACIR",
     "section": "⏳ TODO",
-    "text": "⏳ TODO\n\ninscription sur Zenodo\nédition des métadonnées"
+    "text": "⏳ TODO\n\ninscription sur Zenodo (ici)\nenvoyez-moi votre nom d’utilisateur (username)\nvalider l’invitation que je vous enverrai\ndéposer des documents\ncontribuer à l’édition des métadonnées"
   },
   {
     "objectID": "index.html#framework-hugo---généralités",
     "href": "index.html#framework-hugo---généralités",
-    "title": "ALMACIR",
+    "title": "ANR ALMACIR",
     "section": "Framework Hugo - Généralités",
     "text": "Framework Hugo - Généralités\nLogiciel open source pour la génération de sites statiques (comme Hypotheses.org)"
   },
   {
     "objectID": "index.html#site-web-dalmacir",
     "href": "index.html#site-web-dalmacir",
-    "title": "ALMACIR",
+    "title": "ANR ALMACIR",
     "section": "Site web d’ALMACIR",
     "text": "Site web d’ALMACIR\nhttps://iramat.github.io/almacir/"
   },
   {
     "objectID": "index.html#todo-4",
     "href": "index.html#todo-4",
-    "title": "ALMACIR",
+    "title": "ANR ALMACIR",
     "section": "⏳ TODO",
-    "text": "⏳ TODO\n\ninternationalisation du site web"
+    "text": "⏳ TODO\n\ninternationalisation (en, ar)\ncontribuer au contenu (ex: ../content/fr/presentation/..)"
+  },
+  {
+    "objectID": "index.html#points-clefs",
+    "href": "index.html#points-clefs",
+    "title": "ANR ALMACIR",
+    "section": "Points clefs",
+    "text": "Points clefs\n\nNumishare = application\n\nNomisma = contenu\nFAIR + LOD + Science Ouverte"
   },
   {
     "objectID": "index.html#footnotes",
     "href": "index.html#footnotes",
-    "title": "ALMACIR",
+    "title": "ANR ALMACIR",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nNUmismatic Description Standard XML\nAmerican Numismatic Society\nAutres branches: hugo-files et gh-pages: génération du site web Hugo; dev: développement informatique\nOpen Archives Initiative Protocol for Metadata Harvesting\nCentre Européen pour la Recherche Nucléaire\nnutshell européenne pour la Science Ouverte"
+    "text": "Footnotes\n\n\nhttps://github.com/ewg118/numishare\nNUmismatic Description Standard XML\nnomisma concepts: thesauri et ontologie\nAmerican Numismatic Society\nAutres branches hugo-files et gh-pages pour la génération du site web Hugo; dev pour le développement informatique\nOpen Archives Initiative Protocol for Metadata Harvesting\nnutshell européenne pour la Science Ouverte\nCentre Européen pour la Recherche Nucléaire"
   }
 ]
