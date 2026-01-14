@@ -1,6 +1,6 @@
 ---
 title: "ANR ALMACIR"
-subtitle: "**Le système d'information** <br>(Numishare, package R, GitHub, Zenodo, site web)"
+subtitle: "**Le système d'information**<br>Numishare, package R, GitHub, Zenodo, site web"
 author:
   - name: Thomas Huet
     affiliation: 
@@ -44,8 +44,8 @@ library(dplyr)
 library(kableExtra)
 ```
 
-# Base de données
-
+# Introduction {background-image="https://raw.githubusercontent.com/iramat/almacir/master/img/app-web-seo-google-sijilmasa-dinar-gold.png" background-opacity=0.1 background-size="400px" background-repeat="repeat"}
+  
 ## Plan
 
 - Numishare
@@ -53,6 +53,8 @@ library(kableExtra)
 - GitHub
 - Zenodo
 - site web
+
+# Base de données {background-image="https://raw.githubusercontent.com/iramat/almacir/master/img/app-web-seo-google-sijilmasa-dinar-gold.png" background-opacity=0.1 background-size="400px" background-repeat="repeat"}
 
 ## Numishare
 
@@ -63,7 +65,7 @@ library(kableExtra)
 :::: {.columns}
 
 ::: {.column width="50%"}
-Suite d'applications _open source_[^0] pour la gestion des collections numismatiques. Normes (NUDS)[^7] pratiques communes des bibliothèques/archives/musées pour la durabilité et l'interopérabilité des données. Nativement alignée sur Nomisma.org[^10]
+Suite d'applications _open source_[^0], alignée sur [Nomisma.org](https://nomisma.org/)[^10], pour la gestion des collections numismatiques. Normes (NUDS)[^7] pratiques communes des bibliothèques/archives/musées pour la réutilisabilité des données (FAI**R**). 
 :::
 
 ::: {.column width="50%"}
@@ -96,29 +98,28 @@ Collection numismatique du Musée d'art de l'Université de Virginie hébergé p
 
 ### MCD
 
+<https://github.com/iramat/almacir/blob/dev/INSTALL.md#erd>
+
 ```{mermaid}
 flowchart TB
-    Browser["Web Browser"]
-    
-    subgraph Numishare_stack ["Numishare stack"]
-        Tomcat["Apache Tomcat 9"]
-        Orbeon["Orbeon Forms CE"]
-        Numishare["Numishare App"]
-        Exist["eXist-db"]
-        Solr["Apache Solr"]
-        Cantaloupe["Cantaloupe IIIF"]
-        Images["Image Storage"]
-    end
-    
-    style Numishare_stack fill:#f9f9f9,stroke:#333,stroke-width:2px,stroke-dasharray: 5 5
-
-    Browser -->|HTTP/S| Tomcat
-    Tomcat --> Orbeon
-    Orbeon --> Numishare
-    Numishare --> Exist
-    Numishare --> Solr
-    Numishare --> Cantaloupe
-    Cantaloupe --> Images
+Browser["Web Browser"]
+subgraph Numishare_stack["Numishare stack"]
+Tomcat["Apache Tomcat 9"]
+Orbeon["Orbeon Forms CE"]
+Numishare["Numishare App"]
+Exist["eXist-db"]
+Solr["Apache Solr"]
+Cantaloupe["Cantaloupe IIIF"]
+Images["Image Storage"]
+end
+Browser -->|HTTP-S| Tomcat
+Tomcat --> Orbeon
+Orbeon --> Numishare
+Numishare --> Exist
+Numishare --> Solr
+Numishare --> Cantaloupe
+Cantaloupe --> Images
+style Numishare_stack fill:#f9f9f9,stroke:#333,stroke-width:2px,stroke-dasharray:5 5
 ```
 
 :::
@@ -142,10 +143,10 @@ Numishare est déployé et opérationnel en mode `admin`.
 
 - Développer la fiche descriptive (_nomisma concepts_ + nouveaux concepts)
 - Développer un flux de création et d'édition des données 
-- Alimenter les données
+- Création des données
 - Finaliser l’exposition publique (production): <http://157.136.252.188> (HTTP) -> <https://iramat-apps.cnrs.fr/> (HTTPS)
 
-# Langage R
+# Langage R {background-image="https://raw.githubusercontent.com/iramat/almacir/master/img/app-web-seo-google-sijilmasa-dinar-gold.png" background-opacity=0.1 background-size="400px" background-repeat="repeat"}
 
 ## package iRamat pour les analyses
 
@@ -199,7 +200,7 @@ Numishare est déployé et opérationnel en mode `admin`.
 
 
 
-# GitHub
+# GitHub {background-image="https://raw.githubusercontent.com/iramat/almacir/master/img/app-web-seo-google-sijilmasa-dinar-gold.png" background-opacity=0.1 background-size="400px" background-repeat="repeat"}
 
 ## GitHub - Généralités
 
@@ -240,9 +241,9 @@ Numishare est déployé et opérationnel en mode `admin`.
 
 ::: {.column width="50%"}
 
-<https://github.com/iramat/almacir> ( = branche [main](https://github.com/iramat/almacir/tree/main)[^6]): Données publiques: données de référence, images, présentations, code informatique (non R), etc.
+<https://github.com/iramat/almacir> ( = branche [main](https://github.com/iramat/almacir/tree/main)[^6]): Données publiques: données de référence (ex: nouveaux concepts), images, présentations, code informatique (non R), etc.
 
-[^6]: Autres branches  [hugo-files](https://github.com/iramat/almacir/tree/hugo-files) et [gh-pages](https://github.com/iramat/almacir/tree/gh-pages) pour la génération du site web Hugo; [dev](https://github.com/iramat/almacir/tree/dev) pour le développement informatique
+[^6]: Autres branches [hugo-files](https://github.com/iramat/almacir/tree/hugo-files) et [gh-pages](https://github.com/iramat/almacir/tree/gh-pages) pour la génération du site web Hugo; [dev](https://github.com/iramat/almacir/tree/dev) pour le développement informatique
 
 :::
 
@@ -285,7 +286,7 @@ Numishare est déployé et opérationnel en mode `admin`.
 - contribuer aux discussions (👋 _Issues_)
 
 
-# Zenodo
+# Zenodo {background-image="https://raw.githubusercontent.com/iramat/almacir/master/img/app-web-seo-google-sijilmasa-dinar-gold.png" background-opacity=0.1 background-size="400px" background-repeat="repeat"}
 
 ## Généralités
 
@@ -313,7 +314,11 @@ Créé dans le cadre d' OpenAIRE[^4] et hébergé au CERN[^3], sauvegarde des do
 
 ### Données numismatiques
 
-filtrer les données ALMACIR avec <https://zenodo.org/communities/iramat/records?q=&f=subject%3ANumismatics&l=list&p=1&s=10&sort=newest>
+filtrer les données ALMACIR avec le `subject` = `Numismatics`[^11]
+<br>
+<https://zenodo.org/communities/iramat/records?q=&f=subject%3ANumismatics&l=list&p=1&s=10&sort=newest>
+
+[^11]: Issu du vocabulaire contrôlé MeSH (_Medical Subject Headings_)
 
 :::
 
@@ -323,13 +328,19 @@ filtrer les données ALMACIR avec <https://zenodo.org/communities/iramat/records
 - envoyez-moi votre nom d'utilisateur (_username_)
 - valider l'invitation que je vous enverrai
 - déposer des documents
-- contribuer à l'édition des métadonnées
+- contribuer à l'édition/sélection des métadonnées
 
-# Site web
+# Site web {background-image="https://raw.githubusercontent.com/iramat/almacir/master/img/app-web-seo-google-sijilmasa-dinar-gold.png" background-opacity=0.1 background-size="400px" background-repeat="repeat"}
 
 ## _Framework_ Hugo - Généralités
 
 Logiciel _open source_ pour la génération de sites statiques (comme Hypotheses.org)
+
+
+```{=html}
+<iframe width="1200" height="450" src="https://gohugo.io/" title="Hugo"></iframe>
+```
+
 
 ## Site web d'ALMACIR
 
@@ -342,18 +353,17 @@ Logiciel _open source_ pour la génération de sites statiques (comme Hypotheses
 - internationalisation (`en`, `ar`)
 - contribuer au contenu (ex: [../content/fr/presentation/..](https://github.com/iramat/almacir/blob/hugo-files/content/fr/presentation/_index.md))
 
-# Synthèse
+# Synthèse {background-image="https://raw.githubusercontent.com/iramat/almacir/master/img/app-web-seo-google-sijilmasa-dinar-gold.png" background-opacity=0.1 background-size="400px" background-repeat="repeat"}
 
 ## Points clefs
 
 - Numishare = application  
 - Nomisma = contenu
 - FAIR + LOD + Science Ouverte
+- _code as data_
 
 
 # Discussion {background-image="https://raw.githubusercontent.com/iramat/almacir/master/img/app-web-seo-google-sijilmasa-dinar-gold.png" background-opacity=0.1 background-size="400px" background-repeat="repeat"}
 
-- Zenodo _vs_ Nakala
-- IIIF Server: http://157.136.252.188:8182/iiif/2
 
 

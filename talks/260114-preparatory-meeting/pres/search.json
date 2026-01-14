@@ -11,7 +11,7 @@
     "href": "index.html#numishare",
     "title": "ANR ALMACIR",
     "section": "Numishare",
-    "text": "Numishare\n\nPrésentationHistoriqueBase de données/ProjetsMCD\n\n\n\n\nSuite d’applications open source1 pour la gestion des collections numismatiques. Normes (NUDS)2 pratiques communes des bibliothèques/archives/musées pour la durabilité et l’interopérabilité des données. Nativement alignée sur Nomisma.org3\n\n\n\n\n\nCollection numismatique du Musée d’art de l’Université de Virginie hébergé par le Scholars’ Lab. Le projet a débuté à l’automne 2007 et le code a été rendu open source à l’été 2009. Développé et maintenu par l’ ANS4 et utilisé pour sa collection en ligne\n\n\n\n\n\n\n\n\n\n\nflowchart TB\n    Browser[\"Web Browser\"]\n    \n    subgraph Numishare_stack [\"Numishare stack\"]\n        Tomcat[\"Apache Tomcat 9\"]\n        Orbeon[\"Orbeon Forms CE\"]\n        Numishare[\"Numishare App\"]\n        Exist[\"eXist-db\"]\n        Solr[\"Apache Solr\"]\n        Cantaloupe[\"Cantaloupe IIIF\"]\n        Images[\"Image Storage\"]\n    end\n    \n    style Numishare_stack fill:#f9f9f9,stroke:#333,stroke-width:2px,stroke-dasharray: 5 5\n\n    Browser --&gt;|HTTP/S| Tomcat\n    Tomcat --&gt; Orbeon\n    Orbeon --&gt; Numishare\n    Numishare --&gt; Exist\n    Numishare --&gt; Solr\n    Numishare --&gt; Cantaloupe\n    Cantaloupe --&gt; Images"
+    "text": "Numishare\n\nPrésentationHistoriqueBase de données/ProjetsMCD\n\n\n\n\nSuite d’applications open source1, alignée sur Nomisma.org2, pour la gestion des collections numismatiques. Normes (NUDS)3 pratiques communes des bibliothèques/archives/musées pour la réutilisabilité des données (FAIR).\n\n\n\n\n\nCollection numismatique du Musée d’art de l’Université de Virginie hébergé par le Scholars’ Lab. Le projet a débuté à l’automne 2007 et le code a été rendu open source à l’été 2009. Développé et maintenu par l’ ANS4 et utilisé pour sa collection en ligne\n\n\n\n\n\nhttps://github.com/iramat/almacir/blob/dev/INSTALL.md#erd\n\n\n\n\n\nflowchart TB\nBrowser[\"Web Browser\"]\nsubgraph Numishare_stack[\"Numishare stack\"]\nTomcat[\"Apache Tomcat 9\"]\nOrbeon[\"Orbeon Forms CE\"]\nNumishare[\"Numishare App\"]\nExist[\"eXist-db\"]\nSolr[\"Apache Solr\"]\nCantaloupe[\"Cantaloupe IIIF\"]\nImages[\"Image Storage\"]\nend\nBrowser --&gt;|HTTP-S| Tomcat\nTomcat --&gt; Orbeon\nOrbeon --&gt; Numishare\nNumishare --&gt; Exist\nNumishare --&gt; Solr\nNumishare --&gt; Cantaloupe\nCantaloupe --&gt; Images\nstyle Numishare_stack fill:#f9f9f9,stroke:#333,stroke-width:2px,stroke-dasharray:5 5"
   },
   {
     "objectID": "index.html#almacir-sur-numishare",
@@ -25,7 +25,7 @@
     "href": "index.html#todo",
     "title": "ANR ALMACIR",
     "section": "⏳ TODO",
-    "text": "⏳ TODO\n\nDévelopper la fiche descriptive (nomisma concepts + nouveaux concepts)\nDévelopper un flux de création et d’édition des données\nAlimenter les données\nFinaliser l’exposition publique (production): http://157.136.252.188 (HTTP) -&gt; https://iramat-apps.cnrs.fr/ (HTTPS)"
+    "text": "⏳ TODO\n\nDévelopper la fiche descriptive (nomisma concepts + nouveaux concepts)\nDévelopper un flux de création et d’édition des données\nCréation des données\nFinaliser l’exposition publique (production): http://157.136.252.188 (HTTP) -&gt; https://iramat-apps.cnrs.fr/ (HTTPS)"
   },
   {
     "objectID": "index.html#package-iramat-pour-les-analyses",
@@ -53,7 +53,7 @@
     "href": "index.html#almacir-sur-github",
     "title": "ANR ALMACIR",
     "section": "ALMACIR sur GitHub",
-    "text": "ALMACIR sur GitHub\n\nRepo publicRepo privé\n\n\n\n\nhttps://github.com/iramat/almacir ( = branche main5): Données publiques: données de référence, images, présentations, code informatique (non R), etc.\n\n\n\n\n\n\n\nhttps://github.com/iramat/almacir-private (main uniquement)"
+    "text": "ALMACIR sur GitHub\n\nRepo publicRepo privé\n\n\n\n\nhttps://github.com/iramat/almacir ( = branche main5): Données publiques: données de référence (ex: nouveaux concepts), images, présentations, code informatique (non R), etc.\n\n\n\n\n\n\n\nhttps://github.com/iramat/almacir-private (main uniquement)"
   },
   {
     "objectID": "index.html#todo-2",
@@ -74,14 +74,14 @@
     "href": "index.html#almacir-sur-zenodo",
     "title": "ANR ALMACIR",
     "section": "ALMACIR sur Zenodo",
-    "text": "ALMACIR sur Zenodo\n\nCommunauté “IRAMAT”DonnéesDonnées numismatiques\n\n\nhttps://zenodo.org/communities/iramat/\n\n\n\n\n\n\nfiltrer les données ALMACIR avec https://zenodo.org/communities/iramat/records?q=&f=subject%3ANumismatics&l=list&p=1&s=10&sort=newest"
+    "text": "ALMACIR sur Zenodo\n\nCommunauté “IRAMAT”DonnéesDonnées numismatiques\n\n\nhttps://zenodo.org/communities/iramat/\n\n\n\n\n\n\nfiltrer les données ALMACIR avec le subject = Numismatics9  https://zenodo.org/communities/iramat/records?q=&f=subject%3ANumismatics&l=list&p=1&s=10&sort=newest"
   },
   {
     "objectID": "index.html#todo-3",
     "href": "index.html#todo-3",
     "title": "ANR ALMACIR",
     "section": "⏳ TODO",
-    "text": "⏳ TODO\n\ninscription sur Zenodo (ici)\nenvoyez-moi votre nom d’utilisateur (username)\nvalider l’invitation que je vous enverrai\ndéposer des documents\ncontribuer à l’édition des métadonnées"
+    "text": "⏳ TODO\n\ninscription sur Zenodo (ici)\nenvoyez-moi votre nom d’utilisateur (username)\nvalider l’invitation que je vous enverrai\ndéposer des documents\ncontribuer à l’édition/sélection des métadonnées"
   },
   {
     "objectID": "index.html#framework-hugo---généralités",
@@ -109,13 +109,13 @@
     "href": "index.html#points-clefs",
     "title": "ANR ALMACIR",
     "section": "Points clefs",
-    "text": "Points clefs\n\nNumishare = application\n\nNomisma = contenu\nFAIR + LOD + Science Ouverte"
+    "text": "Points clefs\n\nNumishare = application\n\nNomisma = contenu\nFAIR + LOD + Science Ouverte\ncode as data"
   },
   {
     "objectID": "index.html#footnotes",
     "href": "index.html#footnotes",
     "title": "ANR ALMACIR",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nhttps://github.com/ewg118/numishare\nNUmismatic Description Standard XML\nnomisma concepts: thesauri et ontologie\nAmerican Numismatic Society\nAutres branches hugo-files et gh-pages pour la génération du site web Hugo; dev pour le développement informatique\nOpen Archives Initiative Protocol for Metadata Harvesting\nnutshell européenne pour la Science Ouverte\nCentre Européen pour la Recherche Nucléaire"
+    "text": "Footnotes\n\n\nhttps://github.com/ewg118/numishare\nnomisma concepts: thesauri et ontologie\nNUmismatic Description Standard XML\nAmerican Numismatic Society\nAutres branches hugo-files et gh-pages pour la génération du site web Hugo; dev pour le développement informatique\nOpen Archives Initiative Protocol for Metadata Harvesting\nnutshell européenne pour la Science Ouverte\nCentre Européen pour la Recherche Nucléaire\nIssu du vocabulaire contrôlé MeSH (Medical Subject Headings)"
   }
 ]

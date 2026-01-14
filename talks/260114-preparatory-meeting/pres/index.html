@@ -137,7 +137,7 @@
 
 <section id="title-slide" data-background-image="https://raw.githubusercontent.com/iramat/almacir/master/img/app-web-seo-google-sijilmasa-dinar-gold.png" data-background-opacity="0.1" data-background-size="110%" data-notes="Lorem" class="quarto-title-block center">
   <h1 class="title">ANR ALMACIR</h1>
-  <p class="subtitle"><strong>Le système d’information</strong> <br>(Numishare, package R, GitHub, Zenodo, site web)</p>
+  <p class="subtitle"><strong>Le système d’information</strong><br>Numishare, package R, GitHub, Zenodo, site web</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -160,8 +160,8 @@ Sébastien Gasc (coord.)
 
 </section>
 <section>
-<section id="base-de-données" class="title-slide slide level1 center">
-<h1>Base de données</h1>
+<section id="introduction" class="title-slide slide level1 center" data-background-image="https://raw.githubusercontent.com/iramat/almacir/master/img/app-web-seo-google-sijilmasa-dinar-gold.png" data-background-opacity="0.1" data-background-size="400px" data-background-repeat="repeat">
+<h1>Introduction</h1>
 
 </section>
 <section id="plan" class="slide level2">
@@ -173,6 +173,11 @@ Sébastien Gasc (coord.)
 <li>Zenodo</li>
 <li>site web</li>
 </ul>
+</section></section>
+<section>
+<section id="base-de-données" class="title-slide slide level1 center" data-background-image="https://raw.githubusercontent.com/iramat/almacir/master/img/app-web-seo-google-sijilmasa-dinar-gold.png" data-background-opacity="0.1" data-background-size="400px" data-background-repeat="repeat">
+<h1>Base de données</h1>
+
 </section>
 <section id="numishare" class="slide level2">
 <h2>Numishare</h2>
@@ -182,7 +187,7 @@ Sébastien Gasc (coord.)
 <div id="tabset-1-1">
 <div class="columns">
 <div class="column" style="width:50%;">
-<p>Suite d’applications <em>open source</em><a href="#/footnotes" class="footnote-ref" id="fnref1" role="doc-noteref" data-footnote-href="#/fn1" onclick=""><sup>1</sup></a> pour la gestion des collections numismatiques. Normes (NUDS)<a href="#/footnotes" class="footnote-ref" id="fnref2" role="doc-noteref" data-footnote-href="#/fn2" onclick=""><sup>2</sup></a> pratiques communes des bibliothèques/archives/musées pour la durabilité et l’interopérabilité des données. Nativement alignée sur Nomisma.org<a href="#/footnotes" class="footnote-ref" id="fnref3" role="doc-noteref" data-footnote-href="#/fn3" onclick=""><sup>3</sup></a></p>
+<p>Suite d’applications <em>open source</em><a href="#/footnotes" class="footnote-ref" id="fnref1" role="doc-noteref" data-footnote-href="#/fn1" onclick=""><sup>1</sup></a>, alignée sur <a href="https://nomisma.org/">Nomisma.org</a><a href="#/footnotes" class="footnote-ref" id="fnref2" role="doc-noteref" data-footnote-href="#/fn2" onclick=""><sup>2</sup></a>, pour la gestion des collections numismatiques. Normes (NUDS)<a href="#/footnotes" class="footnote-ref" id="fnref3" role="doc-noteref" data-footnote-href="#/fn3" onclick=""><sup>3</sup></a> pratiques communes des bibliothèques/archives/musées pour la réutilisabilité des données (FAI<strong>R</strong>).</p>
 </div><div class="column" style="width:50%;">
 <iframe width="800" height="450" src="https://nomisma.org/" title="Nomisma.org"></iframe>
 </div></div>
@@ -194,33 +199,31 @@ Sébastien Gasc (coord.)
 <iframe width="1200" height="450" src="https://numismatics.org/resources/" title="Numishare projects"></iframe>
 </div>
 <div id="tabset-1-4">
+<p><a href="https://github.com/iramat/almacir/blob/dev/INSTALL.md#erd" class="uri">https://github.com/iramat/almacir/blob/dev/INSTALL.md#erd</a></p>
 <div class="cell" data-reveal="true" data-layout-align="default">
 <div class="cell-output-display">
 <div>
 <p></p><figure class=""><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart TB
-    Browser["Web Browser"]
-    
-    subgraph Numishare_stack ["Numishare stack"]
-        Tomcat["Apache Tomcat 9"]
-        Orbeon["Orbeon Forms CE"]
-        Numishare["Numishare App"]
-        Exist["eXist-db"]
-        Solr["Apache Solr"]
-        Cantaloupe["Cantaloupe IIIF"]
-        Images["Image Storage"]
-    end
-    
-    style Numishare_stack fill:#f9f9f9,stroke:#333,stroke-width:2px,stroke-dasharray: 5 5
-
-    Browser --&gt;|HTTP/S| Tomcat
-    Tomcat --&gt; Orbeon
-    Orbeon --&gt; Numishare
-    Numishare --&gt; Exist
-    Numishare --&gt; Solr
-    Numishare --&gt; Cantaloupe
-    Cantaloupe --&gt; Images
+Browser["Web Browser"]
+subgraph Numishare_stack["Numishare stack"]
+Tomcat["Apache Tomcat 9"]
+Orbeon["Orbeon Forms CE"]
+Numishare["Numishare App"]
+Exist["eXist-db"]
+Solr["Apache Solr"]
+Cantaloupe["Cantaloupe IIIF"]
+Images["Image Storage"]
+end
+Browser --&gt;|HTTP-S| Tomcat
+Tomcat --&gt; Orbeon
+Orbeon --&gt; Numishare
+Numishare --&gt; Exist
+Numishare --&gt; Solr
+Numishare --&gt; Cantaloupe
+Cantaloupe --&gt; Images
+style Numishare_stack fill:#f9f9f9,stroke:#333,stroke-width:2px,stroke-dasharray:5 5
 </pre>
 </div>
 <p></p></figure><p></p>
@@ -264,12 +267,12 @@ Sébastien Gasc (coord.)
 <ul>
 <li>Développer la fiche descriptive (<em>nomisma concepts</em> + nouveaux concepts)</li>
 <li>Développer un flux de création et d’édition des données</li>
-<li>Alimenter les données</li>
+<li>Création des données</li>
 <li>Finaliser l’exposition publique (production): <a href="http://157.136.252.188" class="uri">http://157.136.252.188</a> (HTTP) -&gt; <a href="https://iramat-apps.cnrs.fr/" class="uri">https://iramat-apps.cnrs.fr/</a> (HTTPS)</li>
 </ul>
 </section></section>
 <section>
-<section id="langage-r" class="title-slide slide level1 center">
+<section id="langage-r" class="title-slide slide level1 center" data-background-image="https://raw.githubusercontent.com/iramat/almacir/master/img/app-web-seo-google-sijilmasa-dinar-gold.png" data-background-opacity="0.1" data-background-size="400px" data-background-repeat="repeat">
 <h1>Langage R</h1>
 
 </section>
@@ -312,7 +315,7 @@ Sébastien Gasc (coord.)
 </div></div>
 </section></section>
 <section>
-<section id="github" class="title-slide slide level1 center">
+<section id="github" class="title-slide slide level1 center" data-background-image="https://raw.githubusercontent.com/iramat/almacir/master/img/app-web-seo-google-sijilmasa-dinar-gold.png" data-background-opacity="0.1" data-background-size="400px" data-background-repeat="repeat">
 <h1>GitHub</h1>
 
 </section>
@@ -350,7 +353,7 @@ Sébastien Gasc (coord.)
 <div id="tabset-2-1">
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><a href="https://github.com/iramat/almacir" class="uri">https://github.com/iramat/almacir</a> ( = branche <a href="https://github.com/iramat/almacir/tree/main">main</a><a href="#/footnotes" class="footnote-ref" id="fnref5" role="doc-noteref" data-footnote-href="#/fn5" onclick=""><sup>5</sup></a>): Données publiques: données de référence, images, présentations, code informatique (non R), etc.</p>
+<p><a href="https://github.com/iramat/almacir" class="uri">https://github.com/iramat/almacir</a> ( = branche <a href="https://github.com/iramat/almacir/tree/main">main</a><a href="#/footnotes" class="footnote-ref" id="fnref5" role="doc-noteref" data-footnote-href="#/fn5" onclick=""><sup>5</sup></a>): Données publiques: données de référence (ex: nouveaux concepts), images, présentations, code informatique (non R), etc.</p>
 </div><div class="column" style="width:50%;">
 <p><br></p>
 <p><img src="https://raw.githubusercontent.com/iramat/almacir/master/img/app-github-almacir-data-public.png" style="width: 750px;vertical-align: middle;"></p>
@@ -376,7 +379,7 @@ Sébastien Gasc (coord.)
 </ul>
 </section></section>
 <section>
-<section id="zenodo" class="title-slide slide level1 center">
+<section id="zenodo" class="title-slide slide level1 center" data-background-image="https://raw.githubusercontent.com/iramat/almacir/master/img/app-web-seo-google-sijilmasa-dinar-gold.png" data-background-opacity="0.1" data-background-size="400px" data-background-repeat="repeat">
 <h1>Zenodo</h1>
 
 </section>
@@ -398,11 +401,11 @@ Sébastien Gasc (coord.)
 <p><img src="https://raw.githubusercontent.com/iramat/iramat-dev/master/img/zenodo-community-iramat-data.png" style="width: 750px;vertical-align: middle;"></p>
 </div>
 <div id="tabset-3-3">
-<p>filtrer les données ALMACIR avec <a href="https://zenodo.org/communities/iramat/records?q=&amp;f=subject%3ANumismatics&amp;l=list&amp;p=1&amp;s=10&amp;sort=newest" class="uri">https://zenodo.org/communities/iramat/records?q=&amp;f=subject%3ANumismatics&amp;l=list&amp;p=1&amp;s=10&amp;sort=newest</a></p>
+<p>filtrer les données ALMACIR avec le <code>subject</code> = <code>Numismatics</code><a href="#/footnotes" class="footnote-ref" id="fnref9" role="doc-noteref" data-footnote-href="#/fn9" onclick=""><sup>9</sup></a> <br> <a href="https://zenodo.org/communities/iramat/records?q=&amp;f=subject%3ANumismatics&amp;l=list&amp;p=1&amp;s=10&amp;sort=newest" class="uri">https://zenodo.org/communities/iramat/records?q=&amp;f=subject%3ANumismatics&amp;l=list&amp;p=1&amp;s=10&amp;sort=newest</a></p>
 </div>
 </div>
 </div>
-</section>
+<aside></aside></section>
 <section id="todo-3" class="slide level2">
 <h2>⏳ TODO</h2>
 <ul>
@@ -410,17 +413,18 @@ Sébastien Gasc (coord.)
 <li>envoyez-moi votre nom d’utilisateur (<em>username</em>)</li>
 <li>valider l’invitation que je vous enverrai</li>
 <li>déposer des documents</li>
-<li>contribuer à l’édition des métadonnées</li>
+<li>contribuer à l’édition/sélection des métadonnées</li>
 </ul>
 </section></section>
 <section>
-<section id="site-web" class="title-slide slide level1 center">
+<section id="site-web" class="title-slide slide level1 center" data-background-image="https://raw.githubusercontent.com/iramat/almacir/master/img/app-web-seo-google-sijilmasa-dinar-gold.png" data-background-opacity="0.1" data-background-size="400px" data-background-repeat="repeat">
 <h1>Site web</h1>
 
 </section>
 <section id="framework-hugo---généralités" class="slide level2">
 <h2><em>Framework</em> Hugo - Généralités</h2>
 <p>Logiciel <em>open source</em> pour la génération de sites statiques (comme Hypotheses.org)</p>
+<iframe width="1200" height="450" src="https://gohugo.io/" title="Hugo"></iframe>
 </section>
 <section id="site-web-dalmacir" class="slide level2">
 <h2>Site web d’ALMACIR</h2>
@@ -435,7 +439,7 @@ Sébastien Gasc (coord.)
 </ul>
 </section></section>
 <section>
-<section id="synthèse" class="title-slide slide level1 center">
+<section id="synthèse" class="title-slide slide level1 center" data-background-image="https://raw.githubusercontent.com/iramat/almacir/master/img/app-web-seo-google-sijilmasa-dinar-gold.png" data-background-opacity="0.1" data-background-size="400px" data-background-repeat="repeat">
 <h1>Synthèse</h1>
 
 </section>
@@ -446,14 +450,11 @@ Sébastien Gasc (coord.)
 </li>
 <li>Nomisma = contenu</li>
 <li>FAIR + LOD + Science Ouverte</li>
+<li><em>code as data</em></li>
 </ul>
 </section></section>
 <section id="discussion" class="title-slide slide level1 center" data-background-image="https://raw.githubusercontent.com/iramat/almacir/master/img/app-web-seo-google-sijilmasa-dinar-gold.png" data-background-opacity="0.1" data-background-size="400px" data-background-repeat="repeat">
 <h1>Discussion</h1>
-<ul>
-<li>Zenodo <em>vs</em> Nakala</li>
-<li>IIIF Server: http://157.136.252.188:8182/iiif/2</li>
-</ul>
 
 
 </section>
@@ -462,13 +463,14 @@ Sébastien Gasc (coord.)
 
 <ol>
 <li id="fn1"><p><a href="https://github.com/ewg118/numishare" class="uri">https://github.com/ewg118/numishare</a></p></li>
-<li id="fn2"><p><em>NUmismatic Description Standard</em> XML</p></li>
-<li id="fn3"><p><em>nomisma concepts</em>: thesauri et ontologie</p></li>
+<li id="fn2"><p><em>nomisma concepts</em>: thesauri et ontologie</p></li>
+<li id="fn3"><p><em>NUmismatic Description Standard</em> XML</p></li>
 <li id="fn4"><p><em>American Numismatic Society</em></p></li>
 <li id="fn5"><p>Autres branches <a href="https://github.com/iramat/almacir/tree/hugo-files">hugo-files</a> et <a href="https://github.com/iramat/almacir/tree/gh-pages">gh-pages</a> pour la génération du site web Hugo; <a href="https://github.com/iramat/almacir/tree/dev">dev</a> pour le développement informatique</p></li>
 <li id="fn6"><p><em>Open Archives Initiative Protocol for Metadata Harvesting</em></p></li>
 <li id="fn7"><p><em>nutshell</em> européenne pour la Science Ouverte</p></li>
 <li id="fn8"><p>Centre Européen pour la Recherche Nucléaire</p></li>
+<li id="fn9"><p>Issu du vocabulaire contrôlé MeSH (<em>Medical Subject Headings</em>)</p></li>
 </ol>
 </section>
     </div>
