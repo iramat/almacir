@@ -13,16 +13,15 @@ rssLimit = 10
 summarylength = 20 # 70 (default)
 
 # Multilingual
-defaultContentLanguage = "ar"
-disableLanguages = ["de", "nl"] # "fr"
-defaultContentLanguageInSubdir = true
+defaultContentLanguage = "fr"
+disableLanguages = ["de", "nl", "ar"] # "fr"
+defaultContentLanguageInSubdir = false
 # disableDefaultLanguageRedirect = true
 
 copyRight = "Copyright (c) 2020-2024 Thulite"
 
 [params]
 favicon = "logo.png"
-
 
 [build.buildStats]
   enable = true

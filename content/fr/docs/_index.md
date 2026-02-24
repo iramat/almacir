@@ -9,6 +9,13 @@ url: "/fr/docs/"
 
 # Lorem
 
+<iframe
+  src="/map.html"
+  width="100%"
+  height="800"
+  style="border:none;">
+</iframe>
+
 
 <p align="center">
     {{< img src="images/spat_general.png" alt="ateliers" width="700" >}}<br>
