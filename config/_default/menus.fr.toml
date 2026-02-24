@@ -14,7 +14,7 @@
 name = "Documentation BDD"
 pageRef = "docs"
 url = "fr/docs" # TODO: less 'hardcoded'
-weight = 10
+weight = 30
 
 [[main]]
 name = "Projet"
@@ -26,7 +26,7 @@ weight = 20
 name = "Presentation"
 pageRef = "presentation"
 url = "fr/presentation" # TODO: less 'hardcoded'
-weight = 30
+weight = 10
 
 [[main]]
 name = "Equipe"
