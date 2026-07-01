@@ -1,0 +1,29 @@
+{{ define "main" }}
+<div class="container-xxl">
+  <div class="row justify-content-center">
+
+    <!-- Main content -->
+    <main class="col-12 col-lg-9 col-xl-10">
+      <div class="docContent">
+        {{ .Content }}
+      </div>
+    </main>
+
+    <!-- Sticky ToC (desktop only) -->
+    <aside class="d-none d-lg-block col-lg-3 col-xl-3">
+      {{ if partial "private/has-headings.html" . }}
+        <div class="page-links toc-sticky">
+          <h3 class="h5 mb-3">{{ i18n "on_this_page" }}</h3>
+
+          {{ if eq site.Params.doks.scrollSpy true }}
+            {{ .TableOfContents | replaceRE "<nav id=\"TableOfContents\">" "<nav id=\"toc\">" | safeHTML }}
+          {{ else }}
+            {{ .TableOfContents }}
+          {{ end }}
+        </div>
+      {{ end }}
+    </aside>
+
+  </div>
+</div>
+{{ end }}

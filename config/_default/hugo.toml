@@ -14,7 +14,7 @@ summarylength = 20 # 70 (default)
 
 # Multilingual
 defaultContentLanguage = "fr"
-disableLanguages = ["de", "nl", "ar"] # "fr"
+disableLanguages = ["de", "nl", "ar", "en"] # "fr"
 defaultContentLanguageInSubdir = false
 # disableDefaultLanguageRedirect = true
 

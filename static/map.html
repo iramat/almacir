@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_daae18741320a48d9db3b750e783c5af {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div id="map-legend" style="
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    z-index: 9999;
+    background: white;
+    padding: 10px 15px;
+    border-radius: 4px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.15);
+    font-size: 14px;
+    ">
+  <div style="font-weight:bold; margin-bottom:5px;">Ateliers monétaires</div>
+  
+  <div style="display:flex; align-items:center; gap:6px; margin:2px 0;">
+    <span style="display:inline-block; width:11px; height:11px; border-radius:50%; background:#C0C0C0; border:1px solid #555;"></span>
+    <span>argent</span>
+  </div>
+  <div style="display:flex; align-items:center; gap:6px; margin:2px 0;">
+    <span style="display:inline-block; width:11px; height:11px; border-radius:50%; background:#D4AF37; border:1px solid #555;"></span>
+    <span>or</span>
+  </div>
+</div>
+    
+            <div class="folium-map" id="map_daae18741320a48d9db3b750e783c5af" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_daae18741320a48d9db3b750e783c5af = L.map(
+                "map_daae18741320a48d9db3b750e783c5af",
+                {
+                    center: [9.0, 31.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "maxBounds": [
+[
+29,
+-11,
+],
+[
+44,
+18,
+],
+],
+  "zoom": 10,
+  "zoomControl": false,
+  "preferCanvas": false,
+  "dragging": false,
+  "scrollWheelZoom": false,
+  "doubleClickZoom": false,
+  "touchZoom": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_5bc204aaeb65064b0486876ad4004306 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 5,
+  "maxZoom": 5,
+  "maxNativeZoom": 5,
+  "noWrap": false,
+  "attribution": "Tiles \u0026copy; Esri \u0026mdash; Source: US National Park Service",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_5bc204aaeb65064b0486876ad4004306.addTo(map_daae18741320a48d9db3b750e783c5af);
+        
+    
+            var circle_marker_bb925198a89b5a17906703f1bbfbe93b = L.circleMarker(
+                [37.8792, -4.7791],
+                {"bubblingMouseEvents": true, "color": "#333333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#D4AF37", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_daae18741320a48d9db3b750e783c5af);
+        
+    
+        var popup_b68145b57d2cc4552d7f4f5929bb5e61 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2fc6f7f6c0cef402e12056064d7dc5a4 = $(`<div id="html_2fc6f7f6c0cef402e12056064d7dc5a4" style="width: 100.0%; height: 100.0%;"><strong>Cordoba</strong><br>Catégorie: or</div>`)[0];
+                popup_b68145b57d2cc4552d7f4f5929bb5e61.setContent(html_2fc6f7f6c0cef402e12056064d7dc5a4);
+            
+        
+
+        circle_marker_bb925198a89b5a17906703f1bbfbe93b.bindPopup(popup_b68145b57d2cc4552d7f4f5929bb5e61)
+        ;
+
+        
+    
+    
+            circle_marker_bb925198a89b5a17906703f1bbfbe93b.bindTooltip(
+                `<div>
+                     Cordoba
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b5a7d82c09d8e382446eed6587767f09 = L.circleMarker(
+                [34.0333, -5.0],
+                {"bubblingMouseEvents": true, "color": "#333333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#C0C0C0", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_daae18741320a48d9db3b750e783c5af);
+        
+    
+        var popup_7d9a80b6810dcf492cfeafa1da1d8d78 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_afd75f106ae45fb7111640449bebb8a8 = $(`<div id="html_afd75f106ae45fb7111640449bebb8a8" style="width: 100.0%; height: 100.0%;"><strong>Fez</strong><br>Catégorie: argent</div>`)[0];
+                popup_7d9a80b6810dcf492cfeafa1da1d8d78.setContent(html_afd75f106ae45fb7111640449bebb8a8);
+            
+        
+
+        circle_marker_b5a7d82c09d8e382446eed6587767f09.bindPopup(popup_7d9a80b6810dcf492cfeafa1da1d8d78)
+        ;
+
+        
+    
+    
+            circle_marker_b5a7d82c09d8e382446eed6587767f09.bindTooltip(
+                `<div>
+                     Fez
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3d450659c4000e9d6f5a099d689417f5 = L.circleMarker(
+                [30.0, -4.0],
+                {"bubblingMouseEvents": true, "color": "#333333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#D4AF37", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_daae18741320a48d9db3b750e783c5af);
+        
+    
+        var popup_82ce439b5af58aba2ba7109cda6e72ef = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6c6be1be2ddb7a8fdc63131ab7c8033b = $(`<div id="html_6c6be1be2ddb7a8fdc63131ab7c8033b" style="width: 100.0%; height: 100.0%;"><strong>Sigilmassa</strong><br>Catégorie: or</div>`)[0];
+                popup_82ce439b5af58aba2ba7109cda6e72ef.setContent(html_6c6be1be2ddb7a8fdc63131ab7c8033b);
+            
+        
+
+        circle_marker_3d450659c4000e9d6f5a099d689417f5.bindPopup(popup_82ce439b5af58aba2ba7109cda6e72ef)
+        ;
+
+        
+    
+    
+            circle_marker_3d450659c4000e9d6f5a099d689417f5.bindTooltip(
+                `<div>
+                     Sigilmassa
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>

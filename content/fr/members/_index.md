@@ -15,5 +15,16 @@ seo:
   noindex: false # false (default) or true
 ---
 
-- Coordination: Sébastion Gasc
-- Membres: Maryse Blet-Lemarquand, Marc Bompaire, Thomas Huet, Guillaume Sarah, Florian Téreygeol
+**Coordination**
+
+- Sébastion Gasc
+
+---
+
+**Membres**
+
+- Maryse Blet-Lemarquand
+- Marc Bompaire
+- Thomas Huet
+- Guillaume Sarah
+- Florian Téreygeol

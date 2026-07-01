@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_dd6a6f599516dc63a242f9cd63e43fcd {
+                #map_87ff0dc28c5f035ade8d9b2086c310d9 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -54,9 +54,6 @@
 <body>
 
 
-            <div class="folium-map" id="map_dd6a6f599516dc63a242f9cd63e43fcd" ></div>
-
-
 <div id="map-legend" style="
     position: fixed;
     bottom: 30px;
@@ -68,22 +65,39 @@
     box-shadow: 0 0 8px rgba(0,0,0,0.15);
     font-size: 14px;
     ">
-  <div style="font-weight:bold; margin-bottom:5px;">Site categories</div>
+  <div style="font-weight:bold; margin-bottom:5px;">Ateliers</div>
 
 </div>
+
+            <div class="folium-map" id="map_87ff0dc28c5f035ade8d9b2086c310d9" ></div>
+
 </body>
 <script>
 
 
-            var map_dd6a6f599516dc63a242f9cd63e43fcd = L.map(
-                "map_dd6a6f599516dc63a242f9cd63e43fcd",
+            var map_87ff0dc28c5f035ade8d9b2086c310d9 = L.map(
+                "map_87ff0dc28c5f035ade8d9b2086c310d9",
                 {
-                    center: [31.274719994271592, -4.28733503389202],
+                    center: [39.0, 12.0],
                     crs: L.CRS.EPSG3857,
                     ...{
-  "zoom": 4,
-  "zoomControl": true,
+  "maxBounds": [
+[
+-3,
+-11,
+],
+[
+44,
+24,
+],
+],
+  "zoom": 10,
+  "zoomControl": false,
   "preferCanvas": false,
+  "dragging": false,
+  "scrollWheelZoom": false,
+  "doubleClickZoom": false,
+  "touchZoom": false,
 }
 
                 }
@@ -93,14 +107,14 @@
 
 
 
-            var tile_layer_93c98931f4b6c4c3fa49ce07a98f6bf0 = L.tileLayer(
-                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+            var tile_layer_9d7973f671a4da3573a04b4941c45e0d = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}",
                 {
-  "minZoom": 0,
-  "maxZoom": 19,
-  "maxNativeZoom": 19,
+  "minZoom": 5,
+  "maxZoom": 5,
+  "maxNativeZoom": 5,
   "noWrap": false,
-  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "attribution": "Tiles \u0026copy; Esri \u0026mdash; Source: US National Park Service",
   "subdomains": "abc",
   "detectRetina": false,
   "tms": false,
@@ -110,47 +124,47 @@
             );
 
 
-            tile_layer_93c98931f4b6c4c3fa49ce07a98f6bf0.addTo(map_dd6a6f599516dc63a242f9cd63e43fcd);
+            tile_layer_9d7973f671a4da3573a04b4941c45e0d.addTo(map_87ff0dc28c5f035ade8d9b2086c310d9);
 
 
-            var marker_704601f747767150ad5f9aefb9da539c = L.marker(
-                [31.274719994271592, -4.28733503389202],
+            var marker_cfb9f32212370b42b70e7b204fc03308 = L.marker(
+                [37.38, -5.98],
                 {
 }
-            ).addTo(map_dd6a6f599516dc63a242f9cd63e43fcd);
+            ).addTo(map_87ff0dc28c5f035ade8d9b2086c310d9);
 
 
-            var icon_ae391f665295f95215b52f221909822c = L.AwesomeMarkers.icon(
+            var icon_1f7ce2f7a2c6ccafdb6e938a0c3652b8 = L.AwesomeMarkers.icon(
                 {
-  "markerColor": "red",
+  "markerColor": "blue",
   "iconColor": "white",
-  "icon": "wrench",
+  "icon": "info-sign",
   "prefix": "glyphicon",
   "extraClasses": "fa-rotate-0",
 }
             );
 
 
-        var popup_3037dbbc79491fbf2eea3904c915173e = L.popup({
+        var popup_1768892aa05aa890491c70986e30d7be = L.popup({
   "maxWidth": 300,
 });
 
 
 
-                var html_a2edb12102d5020120400d2c2e35651d = $(`<div id="html_a2edb12102d5020120400d2c2e35651d" style="width: 100.0%; height: 100.0%;">     <strong>Sijilmassa</strong><br>     <b>Type:</b> A<br>     <b>Description (FR):</b> atelier<br>     <b>Description (EN):</b> workshop     </div>`)[0];
-                popup_3037dbbc79491fbf2eea3904c915173e.setContent(html_a2edb12102d5020120400d2c2e35651d);
+                var html_197f7273354c95c365b86e4938cee295 = $(`<div id="html_197f7273354c95c365b86e4938cee295" style="width: 100.0%; height: 100.0%;"><strong>Seville</strong></div>`)[0];
+                popup_1768892aa05aa890491c70986e30d7be.setContent(html_197f7273354c95c365b86e4938cee295);
 
 
 
-        marker_704601f747767150ad5f9aefb9da539c.bindPopup(popup_3037dbbc79491fbf2eea3904c915173e)
+        marker_cfb9f32212370b42b70e7b204fc03308.bindPopup(popup_1768892aa05aa890491c70986e30d7be)
         ;
 
 
 
 
-            marker_704601f747767150ad5f9aefb9da539c.bindTooltip(
+            marker_cfb9f32212370b42b70e7b204fc03308.bindTooltip(
                 `<div>
-                     Sijilmassa
+                     Seville
                  </div>`,
                 {
   "sticky": true,
@@ -158,7 +172,7 @@
             );
 
 
-                marker_704601f747767150ad5f9aefb9da539c.setIcon(icon_ae391f665295f95215b52f221909822c);
+                marker_cfb9f32212370b42b70e7b204fc03308.setIcon(icon_1f7ce2f7a2c6ccafdb6e938a0c3652b8);
 
 </script>
 </html>

@@ -23,7 +23,7 @@ url = "fr/projet" # TODO: less 'hardcoded'
 weight = 20
 
 [[main]]
-name = "Presentation"
+name = "Présentation"
 pageRef = "presentation"
 url = "fr/presentation" # TODO: less 'hardcoded'
 weight = 10

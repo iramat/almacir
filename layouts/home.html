@@ -1,22 +1,20 @@
 {{ define "main" }}
 <section class="section container-fluid mt-n3 pb-3">
   <div class="row justify-content-center">
-    {{/*  <div class="col-lg-100 text-center">  */}}
     <div class="text-center" style="width: 75%; margin: 0 auto;">
-      {{/*  <h1>{{ .Title }}</h1>  */}}
-      <h1>{{ i18n "title_site" }}</h1>
       <h1 class="d-flex align-items-center justify-content-center gap-3">
-        {{/*  <img
+        <img
           src="{{ "images/logo.png" | relURL }}"
-          alt="Almacir logo"
+          alt="SIG logo"
           class="site-logo"
-        >  */}}
-        {{/*  {{ .Title }}  */}}
+        >
+        {{ i18n "title_site" }}
       </h1>
       <h4>{{ i18n "subtitle_site" }}</h4>
     </div>
     <div class="col-lg-9 col-xl-8 text-center">
-      <p class="lead">{{ .Params.lead | safeHTML }}</p>
+      {{/*  <p class="lead">{{ .Params.lead | safeHTML }}</p>  */}}
+      <p class="lead">{{ i18n "lead_site" }}</p>
       <a class="btn btn-primary btn-cta rounded-pill btn-lg my-3" href="https://zenodo.org/communities/iramat" role="button">{{ i18n "go_zenodo" }}</a>
       {{ .Content }}
     </div>
