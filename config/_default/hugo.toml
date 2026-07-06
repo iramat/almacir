@@ -91,3 +91,4 @@ favicon = "logo.png"
   hint = "photo"
   quality = 85
   resampleFilter = "Lanczos"
+

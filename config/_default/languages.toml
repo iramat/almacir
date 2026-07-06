@@ -22,7 +22,7 @@ weight = 2
 [fr.params]
 languageISO = "FR"
 languageTag = "fr-FR"
-footer = 'Présenté par <a class="text-muted" href="https://thulite.io/">Thulite</a>'
+footer = "<a class='text-muted' href='https://iramat.cnrs.fr/'><img src='https://raw.githubusercontent.com/iramat/iramat-dev/master/img/logo_full.jpg' style='height: 30px;vertical-align: middle;'></a>"
 alertText = 'La nouvelle version est celle-ci ! <a class="alert-link stretched-link" href="https://getdoks.org/blog/doks-v0.5/">Doks v0.5</a>'
 
 [ar]

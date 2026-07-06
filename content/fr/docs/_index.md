@@ -6,14 +6,10 @@ weight: 1
 url: "/fr/docs/"
 ---
 
-🚧 En construction 🚧
+<center>
 
-<p align="center">
-  <iframe
-    src="/almacir/map.html"
-    width="70%"
-    height="500"
-    style="border:none;">
-  </iframe><br>
-  Ateliers monétaires prévus d'être étudiés
-</p>
+--- 🚧 WORK IN PROGRESS 🚧 ---
+
+</center>
+
+La base de données du projet ALMACIR repose sur la pile logicielle _open-source_ Numishare. Une version de démonstration est accessible ici: <https://iramat-apps.cnrs.fr/numishare/demo/>
