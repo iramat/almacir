@@ -6,10 +6,6 @@ weight: 1
 url: "/fr/docs/"
 ---
 
-<center>
+La base de données (BDD) du projet ALMACIR repose sur la pile logicielle _open-source_ <a href="https://iramat.github.io/iramat-apps/numi/numishare">Numishare</a> v1.2.
 
---- 🚧 WORK IN PROGRESS 🚧 ---
 
-</center>
-
-La base de données du projet ALMACIR repose sur la pile logicielle _open-source_ Numishare. Une version de démonstration est accessible ici: <https://iramat-apps.cnrs.fr/numishare/demo/>
