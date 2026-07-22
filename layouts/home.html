@@ -15,7 +15,7 @@
     <div class="col-lg-9 col-xl-8 text-center">
       {{/*  <p class="lead">{{ .Params.lead | safeHTML }}</p>  */}}
       <p class="lead">{{ i18n "lead_site" }}</p>
-      <a class="btn btn-primary btn-cta rounded-pill btn-lg my-3" href="https://zenodo.org/communities/iramat" role="button">{{ i18n "go_zenodo" }}</a>
+      <a class="btn btn-primary btn-cta rounded-pill btn-lg my-3" href="https://iramat-apps.cnrs.fr/numishare/almacir/" role="button">{{ i18n "go_zenodo" }}</a>
       {{ .Content }}
     </div>
   </div>
@@ -54,7 +54,7 @@
         </div>
         <div class="col-lg-4">
           <h2 class="h4">BDD ALMACIR</h2>
-          <p>Utilisez la <a href="{{ "fr/docs" | relLangURL }}">base de données</a> pour trouver et exporter des données numismatiques.<br><hr><strong>{{ site.Data.db_data.nb_analysed_objects }}</strong> objets analysés</p>
+          <p>Utilisez la <a href="{{ "fr/docs" | relLangURL }}">base de données</a> pour trouver et exporter des données numismatiques.<br><hr><strong>{{ site.Data.db_data.nb_analysed_objects }}</strong> objet(s) analysé(s)</p>
         </div>
       </div>
     </div>
