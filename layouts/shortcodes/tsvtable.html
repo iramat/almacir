@@ -1,0 +1,72 @@
+<link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
+
+<div style="overflow-x:auto">
+  <table id="tsvtable-{{ .Ordinal }}" class="display" style="width:100%">
+    <thead></thead>
+    <tbody></tbody>
+  </table>
+</div>
+
+<script>
+(async function () {
+  const url = "{{ .Get 0 | relURL }}";
+  const tableId = "tsvtable-{{ .Ordinal }}";
+
+  const resp = await fetch(url);
+
+  // Only log errors when it actually fails
+  if (!resp.ok) {
+    console.error("TSV fetch failed:", resp.status, resp.statusText, url);
+    document.getElementById(tableId).outerHTML =
+      `<p>Could not load TSV (${resp.status}).</p>`;
+    return;
+  }
+
+  const text = await resp.text();
+
+  const lines = text.trim().split(/\r?\n/);
+  if (lines.length === 0) return;
+
+  const headers = lines[0].split("\t");
+  const rows = lines.slice(1).map(l => l.split("\t"));
+
+  // ✅ Normalize every row to the same column count as headers
+  const normalizedRows = rows.map(cols => {
+    const out = Array(headers.length).fill("");
+    for (let i = 0; i < headers.length; i++) out[i] = cols[i] ?? "";
+    return out;
+  });
+
+  const table = document.getElementById(tableId);
+
+  const thead = table.querySelector("thead");
+  thead.innerHTML = "<tr>" + headers.map(h => `<th>${escapeHtml(h)}</th>`).join("") + "</tr>";
+
+  const tbody = table.querySelector("tbody");
+  tbody.innerHTML = normalizedRows.map(cols =>
+    "<tr>" + cols.map(c => `<td>${escapeHtml(c)}</td>`).join("") + "</tr>"
+  ).join("");
+
+  // Optional: belt-and-suspenders defaultContent for any missing data
+  const columns = headers.map(() => ({ defaultContent: "" }));
+
+  new DataTable("#" + tableId, {
+    paging: true,
+    searching: true,
+    fixedHeader: true,
+    columns
+  });
+
+  function escapeHtml(s) {
+    return String(s)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
+})();
+</script>
+
