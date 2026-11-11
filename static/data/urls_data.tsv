@@ -1,2 +1,6 @@
-url_data	nom_prj	id_obj	id_chips	id_ech
-https://iramat-apps.cnrs.fr/api/numism_alm_1001	almacir	alm-1001	7537	7495
+url_data	nom_prj	id_obj	id_ech
+https://iramat-apps.cnrs.fr/api/numism_alm_1001	almacir	alm_1001	7495
+https://iramat-apps.cnrs.fr/api/numism_alm_1002	almacir	alm_1002	7496
+https://iramat-apps.cnrs.fr/api/numism_alm_1043	almacir	alm_1043	7497
+https://iramat-apps.cnrs.fr/api/numism_alm_1067	almacir	alm_1067	7498
+https://iramat-apps.cnrs.fr/api/numism_alm_1098	almacir	alm_1098	7499
