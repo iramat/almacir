@@ -17,14 +17,16 @@ seo:
 
 **Coordination**
 
-- Sébastion Gasc
+- Sébastion Gasc (IRAMAT-CEB)
 
 ---
 
 **Membres**
 
-- Maryse Blet-Lemarquand
-- Marc Bompaire
-- Thomas Huet
-- Guillaume Sarah
-- Florian Téreygeol
+- Maryse Blet-Lemarquand (IRAMAT-CEB)
+- Marc Bompaire (EPHE)
+- Thomas Huet (IRAMAT-LAPA)
+- Guillaume Sarah (IRAMAT-CEB)
+- Florian Téreygeol (IRAMAT-LAPA)
+- Gabriel Benet (IRAMAT-CEB)
+- Kossi Zangbe (à partir de Mars 2027, IRAMAT-LAPA)

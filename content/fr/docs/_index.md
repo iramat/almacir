@@ -10,7 +10,7 @@ La base de données (BDD) du projet ALMACIR est accessible ici: <br>
 
 <center>
 
-<https://iramat-apps.cnrs.fr/numishare/almacir/>
+<a href="https://iramat-apps.cnrs.fr/numishare/almacir/" target="_blank">https://iramat-apps.cnrs.fr/numishare/almacir/</a>
 
 </center>
 
