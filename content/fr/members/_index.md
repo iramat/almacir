@@ -24,9 +24,10 @@ seo:
 **Membres**
 
 - Maryse Blet-Lemarquand (IRAMAT-CEB)
+- Gabriel Benet (IRAMAT-CEB)
 - Marc Bompaire (EPHE)
 - Thomas Huet (IRAMAT-LAPA)
+- Jean Milot (IRAMAT-CEB)
 - Guillaume Sarah (IRAMAT-CEB)
 - Florian Téreygeol (IRAMAT-LAPA)
-- Gabriel Benet (IRAMAT-CEB)
 - Kossi Zangbe (à partir de Mars 2027, IRAMAT-LAPA)

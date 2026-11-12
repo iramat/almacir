@@ -3,7 +3,7 @@ title: "About ALMACIR"
 description: ""
 summary: ""
 date: 2023-09-07T17:19:07+02:00
-lastmod: 2026-07-01
+lastmod: 2026-10-01
 draft: false
 type: "legal"
 params:
@@ -23,6 +23,9 @@ params:
 <br>
 
 
-ALMACIR is an ANR project (ANR-25-CE27-2996[^1]), funded by the CNRS and hosted by the IRAMAT-CNRS laboratory. The project aims to study Western medieval Islamic coinage. This website and the Numishare database are part of the [**Iramat-apps**](https://iramat.github.io/iramat-apps/) initiative.
+ALMACIR is an ANR project (<a href="https://anr.fr/Projet-ANR-25-CE27-2996" target="_blank">ANR-25-CE27-2996</a>), funded by the CNRS and hosted by the IRAMAT-CNRS laboratory, under the coordination of Sébastien Gasc <a href="https://orcid.org/0000-0002-0123-8753" target="_blank">
+<img src="https://raw.githubusercontent.com/zoometh/thomashuet/main/img/lod-orcid.png" alt="ORCID logo" style="height: 20px; vertical-align: middle;"></a>.
+<br><br>
+The project aims to study Western medieval Islamic coinage. This website and the Numishare database are part of the [**Iramat-apps**](https://iramat.github.io/iramat-apps/) initiative.
 
-[^1]: <https://anr.fr/Projet-ANR-25-CE27-2996>
+
