@@ -1,0 +1,32 @@
+[
+  {
+    "id": "ALM_1001",
+    "obverse": "https://iramat-apps.cnrs.fr/iiif/2/numi%2Fcoin%2FALM_1001%2FALM_1001_d.JPG/full/350,/0/default.jpg",
+    "reverse": "https://iramat-apps.cnrs.fr/iiif/2/numi%2Fcoin%2FALM_1001%2FALM_1001_r.JPG/full/350,/0/default.jpg",
+    "url": "https://iramat-apps.cnrs.fr/numishare/almacir/id/ALM_1001"
+  },
+  {
+    "id": "ALM_1002",
+    "obverse": "https://iramat-apps.cnrs.fr/iiif/2/numi%2Fcoin%2FALM_1002%2FALM_1002_d.JPG/full/350,/0/default.jpg",
+    "reverse": "https://iramat-apps.cnrs.fr/iiif/2/numi%2Fcoin%2FALM_1002%2FALM_1002_r.JPG/full/350,/0/default.jpg",
+    "url": "https://iramat-apps.cnrs.fr/numishare/almacir/id/ALM_1002"
+  },
+  {
+    "id": "ALM_1043",
+    "obverse": "https://iramat-apps.cnrs.fr/iiif/2/numi%2Fcoin%2FALM_1043%2FALM_1043_d.jpg/full/350,/0/default.jpg",
+    "reverse": "https://iramat-apps.cnrs.fr/iiif/2/numi%2Fcoin%2FALM_1043%2FALM_1043_r.jpg/full/350,/0/default.jpg",
+    "url": "https://iramat-apps.cnrs.fr/numishare/almacir/id/ALM_1043"
+  },
+  {
+    "id": "ALM_1067",
+    "obverse": "https://iramat-apps.cnrs.fr/iiif/2/numi%2Fcoin%2FALM_1067%2FALM_1067_d.jpg/full/350,/0/default.jpg",
+    "reverse": "https://iramat-apps.cnrs.fr/iiif/2/numi%2Fcoin%2FALM_1067%2FALM_1067_r.jpg/full/350,/0/default.jpg",
+    "url": "https://iramat-apps.cnrs.fr/numishare/almacir/id/ALM_1067"
+  },
+  {
+    "id": "ALM_1090",
+    "obverse": "https://iramat-apps.cnrs.fr/iiif/2/numi%2Fcoin%2FALM_1090%2FALM_1090_d.jpg/full/350,/0/default.jpg",
+    "reverse": "https://iramat-apps.cnrs.fr/iiif/2/numi%2Fcoin%2FALM_1090%2FALM_1090_r.jpg/full/350,/0/default.jpg",
+    "url": "https://iramat-apps.cnrs.fr/numishare/almacir/id/ALM_1090"
+  }
+]
